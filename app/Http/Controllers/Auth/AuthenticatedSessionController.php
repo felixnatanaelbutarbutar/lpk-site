@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Validation\ValidationException; // ✅ tambahkan ini
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,26 +22,29 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'string'],
         ]);
-
-        $user = \App\Models\User::where('email', $request->email)->first();
-        if ($user && !$user->is_active) {
-            return back()->withErrors(['email' => __('This account is deactivated.')]);
+    
+        if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
+            throw ValidationException::withMessages([
+                'email' => __('auth.failed'),
+            ]);
         }
-
-        if (! \Illuminate\Support\Facades\Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
-            return back()->withErrors(['email' => __('Invalid credentials.')]);
-        }
-
+    
         $request->session()->regenerate();
-        return redirect()->intended(route('dashboard'));
+    
+        // 🚀 Cek role dan redirect sesuai dashboard
+        $user = Auth::user();
+        if ($user->hasRole('admin')) {
+            return redirect()->intended('/admin/dashboard');
+        }
+    
+        return redirect()->intended('/dashboard');
     }
-
 
     /**
      * Destroy an authenticated session.

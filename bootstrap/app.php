@@ -14,11 +14,13 @@ return Application::configure(basePath: dirname(__DIR__))
         // Daftarkan alias untuk route middleware
         $middleware->alias([
             'set.locale' => \App\Http\Middleware\SetLocale::class,
+            'admin' => \App\Http\Middleware\AdminMiddleware::class,
         ]);
 
         // Jika kamu ingin middleware ini otomatis dipakai untuk semua route yang menggunakan group 'web':
         $middleware->web(append: [
             \App\Http\Middleware\SetLocale::class,
+
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

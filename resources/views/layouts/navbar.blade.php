@@ -18,13 +18,12 @@
         </a>
 
         {{-- Language switcher --}}
-        <div class="flex items-center gap-2 ml-3 text-gray-500">
-          <a class="hover:text-indigo-600" href="{{ request()->fullUrlWithQuery(['lang'=>'en']) }}">EN</a>
-          <span>•</span>
-          <a class="hover:text-indigo-600" href="{{ request()->fullUrlWithQuery(['lang'=>'id']) }}">ID</a>
-          <span>•</span>
-          <a class="hover:text-indigo-600" href="{{ request()->fullUrlWithQuery(['lang'=>'ja']) }}">日本語</a>
+        <div class="flex gap-2 items-center">
+          <a href="{{ route('lang.switch', 'id') }}" class="{{ app()->getLocale() == 'id' ? 'font-bold text-indigo-700' : '' }}">🇮🇩 ID</a>
+          <a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'font-bold text-indigo-700' : '' }}">🇺🇸 EN</a>
+          <a href="{{ route('lang.switch', 'jp') }}" class="{{ app()->getLocale() == 'jp' ? 'font-bold text-indigo-700' : '' }}">🇯🇵 JP</a>
         </div>
+        
 
         {{-- Auth --}}
         @auth
