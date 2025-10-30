@@ -53,6 +53,20 @@ Route::middleware(['set.locale'])->group(function () {
         // Route::resource('programs', AdminProgramController::class);
     });
 
+    Route::middleware(['auth', 'role:admin', 'set.locale'])
+        ->prefix('admin')->name('admin.')
+        ->group(function () {
+            Route::view('/', 'admin.dashboard')->name('dashboard');
+            Route::resource('registrations', Admin\RegistrationController::class)->only(['index', 'show', 'update']);
+            Route::resource('facilities', Admin\FacilityController::class);
+            Route::resource('gallery', Admin\GalleryController::class);
+            Route::resource('alumni', Admin\AlumniController::class);
+            Route::resource('programs', Admin\ProgramController::class);
+            Route::resource('users', Admin\UserController::class)->only(['index', 'update']);
+            Route::view('settings', 'admin.settings.index')->name('settings.index');
+        });
+
+
     // 🔐 Route bawaan Breeze (login, register, forgot password, dll)
     require __DIR__ . '/auth.php';
 });
