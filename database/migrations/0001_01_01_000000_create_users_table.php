@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('users', function (Blueprint $t) {
@@ -17,7 +14,7 @@ return new class extends Migration
             $t->string('email')->unique();
             $t->string('password');
             $t->string('phone')->nullable();
-            $t->string(column: 'nik')->nullable();
+            $t->string('nik')->nullable();
             $t->string('birth_place')->nullable();
             $t->date('birth_date')->nullable();
             $t->enum('gender', ['male', 'female', 'other'])->nullable();
@@ -29,9 +26,9 @@ return new class extends Migration
             $t->string('emergency_contact_name')->nullable();
             $t->string('emergency_contact_phone')->nullable();
 
-            // Tambahan baru
-            $t->boolean('is_active')->default(true);     // kontrol aktif/nonaktif akun
-            $t->foreignId('deleted_by')->nullable()      // siapa yang menonaktifkan/hapus akun
+            // kontrol aktif/nonaktif akun
+            $t->boolean('is_active')->default(true);
+            $t->foreignId('deleted_by')->nullable()
                 ->constrained('users')
                 ->nullOnDelete();
 
@@ -39,6 +36,7 @@ return new class extends Migration
             $t->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

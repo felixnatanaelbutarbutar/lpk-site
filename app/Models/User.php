@@ -5,42 +5,56 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles; // <— ADD
+use App\Models\Role;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles; // <— ADD HasRoles
+    use HasFactory, Notifiable;
 
-    /**
-     * Mass assignable attributes.
-     * Tambahkan biodata gabung di sini.
-     */
     protected $fillable = [
         'name',
         'email',
         'password',
-        'phone',
-        'nik',
-        'birth_place',
-        'birth_date',
-        'gender',
-        'address',
-        'city',
-        'province',
-        'postal_code',
-        'education_level',
-        'emergency_contact_name',
-        'emergency_contact_phone',
         'is_active',
-        'deleted_by',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
     ];
 
     protected function casts(): array
     {
         return [
+            'email_verified_at' => 'datetime',
             'password' => 'hashed',
-            'birth_date' => 'date',
             'is_active' => 'boolean',
         ];
+    }
+
+    /** 🔗 Relasi many-to-many ke tabel roles */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'user_roles', 'user_id', 'role_id')
+                    ->withTimestamps()
+                    ->withPivot(['is_active']);
+    }
+
+    /** 🔍 Cek apakah user punya role tertentu */
+    public function hasRole($roleName): bool
+    {
+        if (is_array($roleName)) {
+            return $this->roles()->whereIn('nama', $roleName)->exists();
+        }
+        return $this->roles()->where('nama', $roleName)->exists();
+    }
+
+    /** 🧩 Helper untuk assign role */
+    public function assignRole($roleName)
+    {
+        $role = Role::where('nama', $roleName)->first();
+        if ($role && !$this->hasRole($roleName)) {
+            $this->roles()->attach($role->id, ['is_active' => true]);
+        }
     }
 }

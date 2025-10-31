@@ -1,18 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use Illuminate\Support\Facades\Auth; // ⬅️ tambahkan di paling atas file web.php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes (with locale middleware)
-|--------------------------------------------------------------------------
-| - Default language EN; user/admin bisa ganti via ?lang=en|id|ja
-| - Tidak menggunakan 'verified' karena verifikasi email tidak diaktifkan
-| - Auth routes tetap di routes/auth.php (paket Breeze)
-*/
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::middleware(['set.locale'])->group(function () {
     // 🌐 Halaman publik
@@ -23,12 +14,19 @@ Route::middleware(['set.locale'])->group(function () {
     // 🧭 Dashboard umum (user biasa)
     Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard', function () {
+            $user = Auth::user();
+
             // Arahkan otomatis berdasarkan role
-            $user = Auth::user(); // ⬅️ gunakan facade
             if ($user && $user->hasRole('admin')) {
                 return redirect()->route('admin.dashboard');
             }
-            return view('dashboard'); // tampilan user biasa
+
+            if ($user && $user->hasRole('user')) {
+                return redirect()->route('user.dashboard');
+            }
+
+            // Default fallback
+            return redirect()->route('home');
         })->name('dashboard');
 
         // 👤 Profil pengguna
@@ -49,10 +47,30 @@ Route::middleware(['set.locale'])->group(function () {
     // 🛠️ Grup route admin
     Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-        // Tambahkan route admin lain di sini nanti, misalnya:
-        // Route::resource('programs', AdminProgramController::class);
     });
+
+    // 🧑‍💼 Grup route user
+    Route::middleware(['auth'])->prefix('user')->name('user.')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('user.dashboard'); // Pastikan ada file resources/views/user/dashboard.blade.php
+        })->name('dashboard');
+    });
+
+    Route::middleware(['auth', 'role:admin', 'set.locale'])
+        ->prefix('admin')->name('admin.')
+        ->group(function () {
+            Route::view('/', 'admin.dashboard')->name('dashboard');
+            Route::resource('registrations', Admin\RegistrationController::class)->only(['index', 'show', 'update']);
+            Route::resource('facilities', Admin\FacilityController::class);
+            Route::resource('gallery', Admin\GalleryController::class);
+            Route::resource('alumni', Admin\AlumniController::class);
+            Route::resource('programs', Admin\ProgramController::class);
+            Route::resource('users', Admin\UserController::class)->only(['index', 'update']);
+            Route::view('settings', 'admin.settings.index')->name('settings.index');
+        });
+
 
     // 🔐 Route bawaan Breeze (login, register, forgot password, dll)
     require __DIR__ . '/auth.php';
 });
+
