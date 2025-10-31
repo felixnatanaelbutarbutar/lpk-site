@@ -49,6 +49,7 @@ Route::middleware(['set.locale'])->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     });
 
+<<<<<<< HEAD
     // 🧑‍💼 Grup route user
     Route::middleware(['auth'])->prefix('user')->name('user.')->group(function () {
         Route::get('/dashboard', function () {
@@ -56,6 +57,8 @@ Route::middleware(['set.locale'])->group(function () {
         })->name('dashboard');
     });
 
+=======
+>>>>>>> 4ffa0c1e7db94ac6865ee4d06fd0b59c519e6279
     Route::middleware(['auth', 'role:admin', 'set.locale'])
         ->prefix('admin')->name('admin.')
         ->group(function () {
