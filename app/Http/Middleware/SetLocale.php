@@ -10,11 +10,12 @@ class SetLocale
 {
     public function handle(Request $request, Closure $next)
     {
-        // Ambil kode bahasa dari session, default: 'id'
-        $locale = session('locale', 'id');
+        $lang = $request->query('lang', session('locale', 'id'));
 
-        // Set bahasa aplikasi
-        App::setLocale($locale);
+        if (in_array($lang, ['id', 'en', 'ja'])) {
+            App::setLocale($lang);
+            session(['locale' => $lang]);
+        }
 
         return $next($request);
     }

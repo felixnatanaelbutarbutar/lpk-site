@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PendaftaranSiswaController;
 
 Route::middleware(['set.locale'])->group(function () {
     // 🌐 Halaman publik
@@ -33,7 +34,22 @@ Route::middleware(['set.locale'])->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+
     });
+    // routes/web.php
+Route::middleware(['auth', 'set.locale'])->group(function () {
+    Route::get('/pendaftaran', [PendaftaranSiswaController::class, 'index'])
+        ->name('pendaftaran.index');
+    Route::get('/pendaftaran/create', [PendaftaranSiswaController::class, 'create'])
+        ->name('pendaftaran.create');
+    Route::post('/pendaftaran', [PendaftaranSiswaController::class, 'store'])
+        ->name('pendaftaran.store');
+        // DETAIL
+    Route::get('/pendaftaran/{pendaftaran}', [PendaftaranSiswaController::class, 'show'])
+    ->name('pendaftaran.show');
+});
 
     // 🌍 Ganti bahasa (ID, EN, JP)
     Route::get('/lang/{locale}', function ($locale) {
