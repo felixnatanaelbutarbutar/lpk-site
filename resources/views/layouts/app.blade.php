@@ -20,7 +20,6 @@
   <div class="min-h-screen bg-gray-100">
     @include('layouts.navbar')
 
-<<<<<<< HEAD
 
     @isset($header)
     <header class="bg-white shadow">
@@ -30,16 +29,6 @@
     </header>
     @endisset
 
-=======
-    @isset($header)
-    <header class="bg-white shadow">
-      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        {{ $header }}
-      </div>
-    </header>
-    @endisset
-
->>>>>>> e303b5e7fe1cdd0623d291eb97303accc82a2ac9
     <main>
       @yield('content') {{-- ganti $slot dengan yield --}}
     </main>
