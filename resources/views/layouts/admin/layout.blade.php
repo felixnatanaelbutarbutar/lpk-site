@@ -61,35 +61,35 @@
         </a>
         
         <div class="mt-3 mb-1 px-3 text-[11px] uppercase tracking-wider text-gray-400">Admissions</div>
-        <a href="{{ route('admin.registrations.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.registrations.*') }}">
+        <a href="{{ route('admin.pendaftaran.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.registrations.*') }}">
           <x-lucide-file-check-2 class="w-5 h-5 flex-shrink-0" /> 
           <span class="nav-label">Pendaftaran</span>
         </a>
         
         <div class="mt-3 mb-1 px-3 text-[11px] uppercase tracking-wider text-gray-400">Content</div>
-        <a href="{{ route('admin.facilities.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.facilities.*') }}">
+        {{-- <a href="{{ route('admin.facilities.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.facilities.*') }}"> --}}
           <x-lucide-building-2 class="w-5 h-5 flex-shrink-0" /> 
           <span class="nav-label">Fasilitas</span>
         </a>
-        <a href="{{ route('admin.gallery.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.gallery.*') }}">
+        {{-- <a href="{{ route('admin.gallery.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.gallery.*') }}"> --}}
           <x-lucide-images class="w-5 h-5 flex-shrink-0" /> 
           <span class="nav-label">Galeri</span>
         </a>
-        <a href="{{ route('admin.alumni.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.alumni.*') }}">
+        {{-- <a href="{{ route('admin.alumni.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.alumni.*') }}"> --}}
           <x-lucide-users-round class="w-5 h-5 flex-shrink-0" /> 
           <span class="nav-label">Alumni</span>
         </a>
-        <a href="{{ route('admin.programs.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.programs.*') }}">
+        {{-- <a href="{{ route('admin.programs.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.programs.*') }}"> --}}
           <x-lucide-book-open class="w-5 h-5 flex-shrink-0" /> 
           <span class="nav-label">Program</span>
         </a>
         
         <div class="mt-3 mb-1 px-3 text-[11px] uppercase tracking-wider text-gray-400">System</div>
-        <a href="{{ route('admin.users.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.users.*') }}">
+        {{-- <a href="{{ route('admin.users.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.users.*') }}"> --}}
           <x-lucide-user-cog class="w-5 h-5 flex-shrink-0" /> 
           <span class="nav-label">Users & Roles</span>
         </a>
-        <a href="{{ route('admin.settings.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.settings.*') }}">
+        {{-- <a href="{{ route('admin.settings.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg {{ $ia('admin.settings.*') }}"> --}}
           <x-lucide-settings-2 class="w-5 h-5 flex-shrink-0" /> 
           <span class="nav-label">Settings</span>
         </a>

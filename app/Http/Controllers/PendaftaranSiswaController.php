@@ -5,17 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\PendaftaranSiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Cache; // SUDAH ADA
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Cache;
 
 class PendaftaranSiswaController extends Controller
 {
-    public function create()
-    {
-        return view('user.pendaftaran.create');
-    }
-
     public function index()
     {
         $pendaftaran = PendaftaranSiswa::where('created_by', Auth::id())
@@ -25,9 +19,15 @@ class PendaftaranSiswaController extends Controller
         return view('user.pendaftaran.index', compact('pendaftaran'));
     }
 
+    public function create()
+    {
+        return view('user.pendaftaran.create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
+            'program' => 'required|in:GINOU JISSHUUSEI,TOKUTEI GINOU (MANDIRI)',
             'nama_lengkap' => 'required|string|max:255',
             'tempat_lahir' => 'required|string|max:255',
             'tanggal_lahir' => 'required|date',
@@ -47,35 +47,20 @@ class PendaftaranSiswaController extends Controller
             ? $request->file('foto_ktp')->store('foto_ktp', 'public')
             : null;
 
-        $translatable = [
-            'nama_lengkap' => $request->nama_lengkap,
-            'tempat_lahir' => $request->tempat_lahir,
-            'alamat_ktp' => $request->alamat_ktp,
-            'tujuan_ke_jepang' => $request->tujuan_ke_jepang,
-            'sumber_info' => $request->sumber_info,
-        ];
-
-        $translated = $this->translateBatch($translatable);
-
         PendaftaranSiswa::create([
+            'program' => $request->program,
+            'status' => 'pending',
+
+            // DATA ASLI (TIDAK DITERJEMAHKAN)
             'nama_lengkap' => $request->nama_lengkap,
             'tempat_lahir' => $request->tempat_lahir,
             'alamat_ktp' => $request->alamat_ktp,
+
+            // DATA YANG DITERJEMAHKAN (otomatis di model)
             'tujuan_ke_jepang' => $request->tujuan_ke_jepang,
             'sumber_info' => $request->sumber_info,
 
-            'nama_lengkap_en' => $translated['nama_lengkap']['en'] ?? $request->nama_lengkap,
-            'tempat_lahir_en' => $translated['tempat_lahir']['en'] ?? $request->tempat_lahir,
-            'alamat_ktp_en' => $translated['alamat_ktp']['en'] ?? $request->alamat_ktp,
-            'tujuan_ke_jepang_en' => $translated['tujuan_ke_jepang']['en'] ?? $request->tujuan_ke_jepang,
-            'sumber_info_en' => $translated['sumber_info']['en'] ?? $request->sumber_info,
-
-            'nama_lengkap_jp' => $translated['nama_lengkap']['ja'] ?? $request->nama_lengkap,
-            'tempat_lahir_jp' => $translated['tempat_lahir']['ja'] ?? $request->tempat_lahir,
-            'alamat_ktp_jp' => $translated['alamat_ktp']['ja'] ?? $request->alamat_ktp,
-            'tujuan_ke_jepang_jp' => $translated['tujuan_ke_jepang']['ja'] ?? $request->tujuan_ke_jepang,
-            'sumber_info_jp' => $translated['sumber_info']['ja'] ?? $request->sumber_info,
-
+            // LAINNYA
             'tanggal_lahir' => $request->tanggal_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
             'pendidikan_terakhir' => $request->pendidikan_terakhir,
@@ -88,63 +73,100 @@ class PendaftaranSiswaController extends Controller
             'is_active' => true,
         ]);
 
-        $lang = app()->getLocale();
-
         return redirect()
-            ->route('pendaftaran.index', ['lang' => $lang])
-            ->with('success', 'Pendaftaran berhasil disimpan & diterjemahkan!');
+            ->route('pendaftaran.index', ['lang' => app()->getLocale()])
+            ->with('success', translateText('Pendaftaran berhasil disimpan!'));
     }
 
-    private function translateBatch(array $texts): array
+    // === EDIT ===
+    public function edit(PendaftaranSiswa $pendaftaran)
     {
-        $result = [];
+        $this->authorizeUser($pendaftaran);
 
-        foreach ($texts as $key => $text) {
-            if (empty(trim($text))) {
-                $result[$key] = ['en' => $text, 'ja' => $text];
-                continue;
-            }
+        return view('user.pendaftaran.edit', compact('pendaftaran'));
+    }
 
-            try {
-                $en = $this->translateSingle($text, 'en');
-                $ja = $this->translateSingle($text, 'ja');
-                $result[$key] = ['en' => $en, 'ja' => $ja];
-            } catch (\Exception $e) {
-                Log::warning("Translation failed for {$key}: " . $e->getMessage());
-                $result[$key] = ['en' => $text, 'ja' => $text];
+    // === UPDATE ===
+    public function update(Request $request, PendaftaranSiswa $pendaftaran)
+    {
+        $this->authorizeUser($pendaftaran);
+
+        $request->validate([
+            'program' => 'required|in:GINOU JISSHUUSEI,TOKUTEI GINOU (MANDIRI)',
+            'nama_lengkap' => 'required|string|max:255',
+            'tempat_lahir' => 'required|string|max:255',
+            'tanggal_lahir' => 'required|date',
+            'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
+            'pendidikan_terakhir' => 'required|in:SMA,SMK,D1,D2,D3,D4,S1',
+            'alamat_ktp' => 'required|string',
+            'pernah_belajar_bahasa_jepang' => 'required|in:Pernah,Tidak Pernah',
+            'tempat_belajar_bahasa' => 'nullable|string|max:255',
+            'pernah_ke_jepang' => 'required|in:Pernah,Tidak Pernah',
+            'tujuan_ke_jepang' => 'required|string|max:1000',
+            'sumber_info' => 'required|string|max:1000',
+            'nomor_whatsapp' => 'required|string|max:20',
+            'foto_ktp' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $fotoPath = $pendaftaran->foto_ktp_path;
+        if ($request->hasFile('foto_ktp')) {
+            // Hapus foto lama
+            if ($fotoPath) {
+                Storage::disk('public')->delete($fotoPath);
             }
+            $fotoPath = $request->file('foto_ktp')->store('foto_ktp', 'public');
         }
 
-        return $result;
+        $pendaftaran->update([
+            'program' => $request->program,
+
+            // ASLI
+            'nama_lengkap' => $request->nama_lengkap,
+            'tempat_lahir' => $request->tempat_lahir,
+            'alamat_ktp' => $request->alamat_ktp,
+
+            // TERJEMAHKAN (otomatis di model)
+            'tujuan_ke_jepang' => $request->tujuan_ke_jepang,
+            'sumber_info' => $request->sumber_info,
+
+            // LAINNYA
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'pendidikan_terakhir' => $request->pendidikan_terakhir,
+            'pernah_belajar_bahasa_jepang' => $request->pernah_belajar_bahasa_jepang,
+            'tempat_belajar_bahasa' => $request->tempat_belajar_bahasa,
+            'pernah_ke_jepang' => $request->pernah_ke_jepang,
+            'nomor_whatsapp' => $request->nomor_whatsapp,
+            'foto_ktp_path' => $fotoPath,
+            'updated_by' => Auth::id(),
+        ]);
+
+        return redirect()
+            ->route('pendaftaran.index', ['lang' => app()->getLocale()])
+            ->with('success', translateText('Pendaftaran berhasil diperbarui!'));
     }
 
-    private function translateSingle(string $text, string $target): string
+    // === DELETE ===
+    public function destroy(PendaftaranSiswa $pendaftaran)
     {
-        $cacheKey = "translate_{$target}_" . md5($text);
+        $this->authorizeUser($pendaftaran);
 
-        // GANTI \Cache → Cache
-        return Cache::remember($cacheKey, now()->addHours(24), function () use ($text, $target) {
-            $response = Http::timeout(10)
-                ->withHeaders(['Content-Type' => 'application/json'])
-                ->post('https://translate.argosopentech.com/translate', [
-                    'q' => $text,
-                    'source' => 'id',
-                    'target' => $target,
-                    'format' => 'text'
-                ]);
+        if ($pendaftaran->foto_ktp_path) {
+            Storage::disk('public')->delete($pendaftaran->foto_ktp_path);
+        }
 
-            if ($response->successful()) {
-                return $response->json('translatedText') ?? $text;
-            }
+        $pendaftaran->delete();
 
-            Log::warning("Argos Translate failed", [
-                'text' => $text,
-                'target' => $target,
-                'status' => $response->status(),
-                'body' => $response->body()
-            ]);
+        return redirect()
+            ->route('pendaftaran.index', ['lang' => app()->getLocale()])
+            ->with('success', translateText('Pendaftaran berhasil dihapus!'));
+    }
 
-            return $text;
-        });
+    // === CEK KEPEMILIKAN ===
+    private function authorizeUser(PendaftaranSiswa $pendaftaran)
+    {
+        if ($pendaftaran->created_by !== Auth::id()) {
+            abort(403, translateText('Aksi tidak diizinkan.'));
+        }
     }
 }

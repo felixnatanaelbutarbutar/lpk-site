@@ -16,6 +16,7 @@ class User extends Authenticatable
         'email',
         'password',
         'is_active',
+        'is_admin',
     ];
 
     protected $hidden = [
@@ -29,6 +30,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'is_active' => 'boolean',
+            'is_admin' => 'boolean',
         ];
     }
 
@@ -57,4 +59,5 @@ class User extends Authenticatable
             $this->roles()->attach($role->id, ['is_active' => true]);
         }
     }
+    
 }

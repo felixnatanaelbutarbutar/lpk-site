@@ -12,15 +12,16 @@ class AdminMiddleware
     {
         $user = Auth::user();
 
-        // Cek jika belum login
+        // Cek login
         if (!$user) {
             return redirect()->route('login');
         }
 
-        // ✅ Cek role user
-        if (!$user->hasRole('admin')) {
-            // Bisa arahkan ke halaman lain atau kasih error 403
-            return response()->view('errors.403', [], 403);
+        // GANTI hasRole() → is_admin
+        if (!$user->is_admin) {
+            return response()->view('errors.403', [
+                'message' => translateText('Akses ditolak. Anda bukan admin.')
+            ], 403);
         }
 
         return $next($request);
