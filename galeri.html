@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Galeri LPK Mori</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL'0,
+                'wght'400,
+                'GRAD'0,
+                'opsz'24
+        }
+
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col w-full max-w-6xl flex-1 px-4 md:px-10">
+                    <!-- TopNavBar -->
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-2 sm:px-4 lg:px-6 py-3">
+                        <div class="flex items-center gap-4 text-slate-900 dark:text-slate-50">
+                            <div class="size-6 text-primary">
+                                <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-slate-50">
+                                LPK Mori</h2>
+                        </div>
+                        <div class="hidden md:flex flex-1 justify-end gap-8">
+                            <div class="flex items-center gap-9">
+                                <a class="text-sm font-medium leading-normal text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary"
+                                    href="#">Beranda</a>
+                                <a class="text-sm font-medium leading-normal text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary"
+                                    href="#">Program</a>
+                                <a class="text-sm font-bold leading-normal text-primary" href="#">Galeri</a>
+                                <a class="text-sm font-medium leading-normal text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary"
+                                    href="#">Kontak</a>
+                            </div>
+                            <button
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                <span class="truncate">Login</span>
+                            </button>
+                        </div>
+                        <button
+                            class="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800">
+                            <span class="material-symbols-outlined text-slate-800 dark:text-slate-200">menu</span>
+                        </button>
+                    </header>
+                    <main class="mt-5">
+                        <!-- HeroSection -->
+                        <div class="@container mb-5">
+                            <div class="@[480px]:p-4">
+                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                                    data-alt="Students of LPK Mori in a classroom setting with a sensei"
+                                    style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBg7k_fwpTiZpcrIOUfkUoiPrtB4sC_qUvItPIFfKtg5r0to4xNBzK0EqGSFSx8S7dwcfhQxdnIeBPPREl1RthNnOf9lXvyYLS0Sg7brBhoAL6Es-0BI_onBFbegdorbvrbuQD6OXdjmgeI0MjtBZJx_sINEFanf83LwDVpdEENGW6Of00cId083i1n_DKE4fdzzLdGUBiHQbJCWtfIvntAX653THlad7PQU7yW3_gPK_DBRIPrSGEV4_z4YTxcy0aJBUv4JS0uToE");'>
+                                    <div class="flex flex-col gap-2 text-center max-w-3xl">
+                                        <h1
+                                            class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                            Galeri Kegiatan LPK Mori
+                                        </h1>
+                                        <h2
+                                            class="text-slate-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                            Lihat lebih dekat kegiatan belajar, fasilitas modern, dan momen kebersamaan
+                                            siswa di LPK Mori melalui koleksi foto dan video kami.
+                                        </h2>
+                                    </div>
+                                    <button
+                                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-orange-500 text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-orange-600 transition-colors">
+                                        <span class="truncate">Kelola Galeri</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Chips -->
+                        <div class="flex gap-2 sm:gap-3 p-3 flex-wrap items-center justify-center">
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary text-white pl-4 pr-4">
+                                <p class="text-sm font-medium leading-normal">Semua</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 pl-4 pr-4">
+                                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">
+                                    Kegiatan Belajar</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 pl-4 pr-4">
+                                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Acara
+                                    Kelulusan</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 pl-4 pr-4">
+                                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">
+                                    Fasilitas Kami</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 pl-4 pr-4">
+                                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">
+                                    Kehidupan Asrama</p>
+                            </div>
+                        </div>
+                        <!-- ImageGrid -->
+                        <div class="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-4 p-4">
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="Students practicing japanese conversation"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzBmjSDUVN1vciM4M2W2ghTmpGe_g-jlXSgMOpiqGSfjqJp1BAK-DFYH0wsKjj5sqVhLciBrRBcUrYr4ZxfT2AMtZPjnbsbFXBsk7g0M_yGhP8pSEK6oc27XuvNoxEYCaegZkiSeYAYxT6xRZHmtY1FTwgogJ20ctWDpaNxVXhvLE6R2Utcokgq-oS0qJNwuxY0R7ZChdEeyiWV-oAFtcvq9g2FV9e_7JlyVbQTB8zZemcOy7OMoYdrSiZH3c2eSJx0zr6T-twedo");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Sesi Praktik
+                                    Percakapan</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="A student welding a metal piece during a training session"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAj4106QQT2tZqFjHWTP_wsUHR3F5XzykKVDuMfAJQ7bqI_aRGQdxnmWtO5-_6S23c3L1HlQeGvo6jMiAJ_QWIRGXx0LXn_u_GSK5zPsLYJEHgjchRb_pFNJ6g2DCdGOTNUMwOBibCOwVMEG61ASN9ITl1nrPpfI9aOkiFfz10FsqWhE7nQU0cVVLSMBGDqU0nrbAHpiB4tzzABJvPTkVqQu47PoxRo-HKSZ7Nn-yCmMO16tM4Ti4cyG-Wl7SlWV6mZ1RQVS_r8-1I");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Pelatihan
+                                    Keterampilan Las</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="Students celebrating their graduation"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCInATUuRSI_JPFNHgjHvg7briWH6LCeFYaH1As9AdN4t0V9WqNC3P2ilSnmQcQTXSOeU01XrGNuRi7SenoGOtSnAAiAcX6Rahm1Xwzazn2xyzSOIj9AIi-8uR4rWcVUYCo7r-U2ogbblrMNNMQLOThyJLz98pDDaCmlu0iEW-6hJ8yBONBKm2CZPLR08syH9Tl2qZO7D1m4YNCQZ4UgEsKiNXYV83UVC6hXJUA41Y-hXmpdL4QeTh_OPmE2tzLhUav3C2s7VLgApU");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Upacara Kelulusan
+                                    Angkatan 12</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="A modern and clean classroom with computers"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD30fw-x7z7lx0-cMgsBxQxgOTl2DneRlXr1ji31MndQADi6K1ftc1y7ZCRXnlMf4C3A_urMYSgr-tfBOchWnaGC5rGgSHD5foQME_TZls_q3TFg7Z-V1-rTFD0M5f1rGxAgX82Qdgl2gP4bloZr8xpFFURWhSNTiRNQ2iZzvIZ5Ie1-pp7i0AU8-SSQ1gosU9YKR8IzKhlLcjuXp5RjEjIXJwVpz5PY4mQ53XU6qA-_klHoz83ULc4VcUP8pT_ka2dd6nW4j-8mw8");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Ruang Kelas Modern
+                                </p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="Dormitory room for male students"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqgtyFG5OiduDZmFH3jFqASb-mdVZDkWN_ApFmDaI3OM2Nkxk5ib-rkemq-wXM0giBbw41S8J-iGTjmpkzQYOcsf0HgBdjNQf6gmUAWEKtzgiio6LizJLfRCcwB_7DWurEI9PCl2kT_QlFPCCVjXQyYN5wgingXLL1kMCm3zxmn2tBR5knvQhJvnbuJTZhZ87P5r3YQ3rCCQ2hBI8fdq2P_3MZ1SrZkBQevJYG4sL52JZo2JAHEIepMnLg_ILsPn7PZt24N1pVfgU");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Kehidupan di Asrama
+                                    Putra</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="Students wearing yukata during a Japanese cultural festival"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAePGaptQ8dUu-PwDXMtjn8q1H9mc9DS2Eq5D34XBXJMOMVkXOSoorS1sk0H3OfOxyaTBfq5vpQ5skn6s0BtlWzwZMKnF6GZMTfu_uXNHXgrCFs1YpZYuefBG1hARSz9x7V_vJemhjQmLCI8inMKmIIxbyQLU5iu9oMMjgqT8KR0w6I2n1YoafK6r7Zo_1sFwlxALnnyYQlLkLX-DOtrtpskIyzfHwG0c1owaiUOmrBcQm3GBlMNodL649VBXC7H9uMS4XuEXtIv10");'>
+                                <div
+                                    class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+                                </div>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Festival Budaya
+                                    Jepang</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="A job interview simulation with a student and two instructors"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8ikNuknw9QqoZw06u9IKNRvJfOb5tU3ISWCIVgXkG0HgwT0AjE14ttxFTGapxVgMypXKFNcJ0pG5eoNWb2mJNWw0JiuPqIdDEWXhkd7POjppQASg3X4NMMQy-u8Cl1DhockXXhDSlzxfbrLLevT30F2a9H0cckz4GoLtO3K7im6aYxPT-yAZ6zkIMAT1gP-LiLvRBwa8Bbf5idFltDK5vnav6R5aPvqcnWmPbRcDc_rKMxY0c04isNbQKhD9NexgOCqtHqnNzMR8");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Simulasi Wawancara
+                                    Kerja</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="Students playing basketball at the sports facility"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBH_zxnU6TwtRZjHeotT0KWa3H2PpVVQAYgYpcX-NioHy4yNVNhqI8dkGdcBcGhmTMbBuV_rwCwK6HdZurQWrlXkenIfD_pafieMZhcOchLO1vJdQlDrByzqiZxaN5l4syImnhojX5P6wt3iwNNgOBqcmuRg-ME2PlsDgl_pyfNX2g0gqQ-BdX43MZ2xk1jaFf8A9oXvLUbHwJN8z1M-_pABmQNpaAVgOaewMyLCqHlFoaJlknefFPA4J1R1Gf6rRI17uq6o0qLbqI");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Fasilitas Olahraga
+                                </p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="Students having a dinner together in a dining hall"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPDzZ6v-aLCF_xxEQ2m7nykyhlHH460_Uy-7jHKl-A7WSvoe88PpLn7otOm6Sa8wl6fP_hdoql1PAaG3sxZx0GhJWuuEbX2NRCX4j4k4wqbEZ4BqPVuud6Wyf2gClTHt8NWJIne0QDmGYh8PNn3OxHXQ0eVqrMkmf4FkEj7DdOv4VSgAPNGtOyXNcq6deTuBC69I2wZnxCGZoYVS72MgJY0Zztw17_p3OvmhWzRM-WuuraHZfSd-ID2OgR5y00wWaPE83H1d7KTAw");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Acara Makan Malam
+                                    Bersama</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="Students on an industrial visit to a factory"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPIWYR4ULWe14oHbYTNJZInk3J82ozbSRM6U6xCKo6bgjCcSaNT9TfRQAyPlZvhzpHX47P5CXRHDCRoOnUID_pCp59MDAP1lJ43FYAicppKd2ivywPrFglmCwvqMTCMq6jG4__pcaP_TnSqI11-ze6-onPz5FK6A5lrgdo-Fmn5XCNuB8UxKRRk8PHdZcZx_xGNuSPIlsiUboHopsEV5Qe3m0faICF8vauAnE4lNPbPIXP6H9peiphJ4YbA1O4Xw0_CvCzzy_OtH4");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Kunjungan Industri
+                                </p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="A student practicing kanji writing on a whiteboard"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNg_4sD-3JH-xKV86FR19wftFxdZvxdzxBjCnZJFh6qB-F7xJzp-oDEJYAPcTO9wBFa1Cf-yIYT_e1XcHQMnuC9Mmb5_BRcGWmtdfEsOFOD0FwAzpH5_X6OKYcF2rLymHXoSQI9DPteZg_knQF-BheSa73Ccv8iOPXmuk1auszQSFpBnW7UyrGYOMxa9Rr26lGzl5fCfqohbr76uq0qIYbrvlA2MbTDV5JrmYz_oVeD2o1pbc_HD92cyDeHnnNzDe98KskOKFMBnY");'>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Belajar Menulis
+                                    Kanji</p>
+                            </div>
+                            <div class="relative group bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] overflow-hidden"
+                                data-alt="The LPK Mori library with shelves full of books"
+                                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzxTY2lSQz7o4SP_6XRK_mW5BC44TWTjD2YE7NaY6ML2KdJzYUrbguVx8Buj2BlsbK9BzZ4g9H0KjCgjgZo9ZmEiXe7DKHj8SuCdFKjwzds_ff9tWNuPeOoowy4LWUExJu8iGOutaoJc4bTC2rdONWsxAxhLUlGwLpNl7PJlEn7CN2kJPlSdlJIGq2aLjZcIEy-spxYvj8CQdxcdYtxvakJZGQtU5yTbk424avh_KKmrHj-I-sCGrHl4H2jIicwYO8WHnwzs6z09k");'>
+                                <div
+                                    class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+                                </div>
+                                <p class="text-white text-base font-bold leading-tight line-clamp-2">Perpustakaan LPK
+                                    Mori</p>
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="flex items-center justify-center p-4">
+                            <a class="flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800"
+                                href="#">
+                                <span
+                                    class="material-symbols-outlined text-slate-800 dark:text-slate-200 text-lg">chevron_left</span>
+                            </a>
+                            <a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-white rounded-full bg-primary"
+                                href="#">1</a>
+                            <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800"
+                                href="#">2</a>
+                            <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800"
+                                href="#">3</a>
+                            <span
+                                class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-slate-700 dark:text-slate-300 rounded-full">...</span>
+                            <a class="flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800"
+                                href="#">
+                                <span
+                                    class="material-symbols-outlined text-slate-800 dark:text-slate-200 text-lg">chevron_right</span>
+                            </a>
+                        </div>
+                    </main>
+                    <!-- Footer -->
+                    <footer class="mt-10 border-t border-slate-200 dark:border-slate-800 pt-8 pb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="flex flex-col gap-4">
+                                <div class="flex items-center gap-2">
+                                    <div class="size-6 text-primary">
+                                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-lg font-bold">LPK Mori</h2>
+                                </div>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Lembaga pelatihan kerja ke Jepang
+                                    terpercaya.</p>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="font-semibold text-slate-900 dark:text-slate-100">Navigasi</h3>
+                                <a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
+                                    href="#">Beranda</a>
+                                <a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
+                                    href="#">Program</a>
+                                <a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
+                                    href="#">Galeri</a>
+                                <a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
+                                    href="#">Kontak</a>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="font-semibold text-slate-900 dark:text-slate-100">Kontak</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Jl. Pelatihan No. 123, Jakarta</p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">info@lpkmori.com</p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">(021) 123-4567</p>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="font-semibold text-slate-900 dark:text-slate-100">Media Sosial</h3>
+                                <div class="flex gap-4">
+                                    <a class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
+                                        href="#">
+                                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+                                            <path clip-rule="evenodd"
+                                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                                fill-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                    <a class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
+                                        href="#">
+                                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+                                            <path
+                                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <a class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
+                                        href="#">
+                                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+                                            <path clip-rule="evenodd"
+                                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.802 2.013 10.156 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+                                                fill-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+                            <p>© 2024 LPK Mori. All rights reserved.</p>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

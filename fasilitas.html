@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LPK Mori - Fasilitas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#003366",
+                        "accent": "#E84A5F",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#101922",
+                        "card-light": "#F4F4F4",
+                        "card-dark": "#192734",
+                        "text-light": "#0d141b",
+                        "text-dark": "#f6f7f8",
+                        "subtext-light": "#4c739a",
+                        "subtext-dark": "#a0b5c9"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+
+    </script>
+</head>
+
+<body class="font-display">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- TopNavBar -->
+            <header
+                class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200/80 dark:border-slate-800/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-3">
+                <div class="flex items-center gap-4">
+                    <div class="size-6 text-primary">
+                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">LPK Mori</h2>
+                </div>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                            href="#">Home</a>
+                        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                            href="#">Programs</a>
+                        <a class="text-sm font-medium leading-normal text-primary dark:text-primary"
+                            href="#">Facilities</a>
+                        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                            href="#">Registration</a>
+                        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                            href="#">About Us</a>
+                    </div>
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
+                        <span class="truncate">Login</span>
+                    </button>
+                </div>
+                <button class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </header>
+            <main class="flex-1">
+                <!-- HeroSection -->
+                <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-10">
+                    <div class="w-full">
+                        <div class="@container">
+                            <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4 text-center"
+                                data-alt="A photo collage showing various modern facilities of LPK Mori, including classrooms and labs."
+                                style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDT0LnXSGjErfHj6_DVApFVXmCBReOcZZwMKkDae32DLUrChghrY3B563vIe2QuHV52nT_dNoA5YjI5z_wRKt0g7NLyeBKQiVWBIJ6so7CgPqXXu-jGUjuo2VLgNnkrlKfX1sNUgFqgGIQzSOKq1CqZYpiHyyEtD2eoKX1FPR4fGJ1Oj0EudkFbgR-o5WUNIqPoMezeh7dE6tktW305Dce3LaaNnvSXGSNVW2gshqBIhZau8yL5XWeqqC7eZYYUMgmrQ50b0kXM9qY");'>
+                                <div class="flex flex-col gap-2">
+                                    <h1
+                                        class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-3xl">
+                                        Fasilitas Lengkap Standar Jepang</h1>
+                                    <h2
+                                        class="text-slate-100 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">
+                                        Kami menyediakan lingkungan belajar yang nyaman dan kondusif untuk mempersiapkan
+                                        Anda menuju sukses di Jepang.</h2>
+                                </div>
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-accent text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
+                                    <span class="truncate">Lihat Program Pelatihan</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SectionHeader & ImageGrid -->
+                <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-10">
+                    <div class="w-full">
+                        <h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-5 pt-5 text-center">
+                            Jelajahi Fasilitas Kami</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                            <div class="flex flex-col gap-3 pb-3 bg-card-light dark:bg-card-dark p-4 rounded-xl group">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="Modern classroom with interactive whiteboards and comfortable seating."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNKLCBVH6kyGrWtq0R-YRj66AW2ppgOVD5S97yvgBGeWJ1w9FhgoO4-SDXuHLQIMbg4prcY31X1j8lZBdo1sY4yYRRUXzh3irY8iY3GgeMScaNOSAaq4UTC6k-lu9GF0G_ikUO1C6aEQtQAKbN50X7JwSDeGRxyTZAbicELjz66LONwxrw7mM1jG-7T3ZADCwaXfGHRdwOBEYJjlUw62JeR0HMzPxUQZ0lxN2XqyrOyAA9UGbr93A6om-S7j_yJp_SLWU3eW5bQ7A");'>
+                                </div>
+                                <div>
+                                    <p class="text-base font-medium leading-normal">Ruang Kelas Modern</p>
+                                    <p
+                                        class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">
+                                        Dilengkapi dengan teknologi interaktif untuk pembelajaran yang efektif.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-3 pb-3 bg-card-light dark:bg-card-dark p-4 rounded-xl group">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="Language lab with individual cubicles and audio-visual equipment."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAC9yHIT1LyVdUVPAEgoih4VYgpe9w9ypw5Sfc5mMeQsFi83q1HpddG265wHlNuPj9CiYyJyQi1J0DLDWJQVOVvTbZ6LQ3zJ2z_BTzf8wsQVmvHHgJ5h-uk3XrJfP7Xgq8Y_07GnV6nHW4wK6Lf9UE5u7jYt3xGEq1MXrl9QLvrTa03Z9otyehDpzL-fZRJ_A-XDI8yMQK63MwW3xG49SD16UBRd8CihyoJsVftE_1kb-mpnzCxLTS6LUSeIX69ZuAs7YDCjZlihk4");'>
+                                </div>
+                                <div>
+                                    <p class="text-base font-medium leading-normal">Laboratorium Bahasa</p>
+                                    <p
+                                        class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">
+                                        Peralatan audio-visual canggih untuk melatih pendengaran dan pengucapan.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-3 pb-3 bg-card-light dark:bg-card-dark p-4 rounded-xl group">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="Workshop area with simulation tools for practical job training."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAXRJFgki0AciWlCSoXX5nuYCpnAuKBwR7BJquGpHZUjPbsUc0E7C6pxFpEuank_boCF9NunFhLx-AXxz5g5hIPExdmXAUfWXqb4SYcQXEbHvscNi9j5xxpdnN9xcdNIXzeN2BPMaSEZrs-sNMddrKlK4q1KrfswArKE8ka4KH2kUTom870rIww2K8AWfDm61RFYjYpGXUPo0y7jM0XcBlyuxSh6QA9LuarLU4NI3iOEYyw1ZuPVmeZQKDvRGyN8ze_3KQkd-5yis");'>
+                                </div>
+                                <div>
+                                    <p class="text-base font-medium leading-normal">Ruang Praktek &amp; Simulasi</p>
+                                    <p
+                                        class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">
+                                        Area simulasi untuk mempraktekkan keterampilan kerja sesuai kondisi nyata.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-3 pb-3 bg-card-light dark:bg-card-dark p-4 rounded-xl group">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="Clean and comfortable dormitory room with beds and study desks."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHI-ZwXK7ixbsrwVZUMzrI2OULim3hiPdi3Ar00MexRz9kOf4nQiSYwixh9UmqHDDjSHMCsu5-VnEO-1LUqt9yz7nMdXgWU4uN1Ag91Wa6YoWCzjAAp2VMPh-0jfx_VAfX1gEQqgqmzGuulmbJqXFCO7LR4tcvf5b9u0OsYpVHGch5hYPqGT720dypqg5Re-ToS9enN-1h-3HLn5HUn9IgKdWa_Mrx9khDT-NflD2cK4qJixZHhRtnz3GQW9U7kYTXGtIAtBVi4A4");'>
+                                </div>
+                                <div>
+                                    <p class="text-base font-medium leading-normal">Asrama yang Nyaman</p>
+                                    <p
+                                        class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">
+                                        Tempat tinggal yang bersih dan aman untuk mendukung fokus belajar.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-3 pb-3 bg-card-light dark:bg-card-dark p-4 rounded-xl group">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="Library with shelves full of books and a quiet study area."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDzJo857pg-evGLOvHxeDglfystz-Q969JAtQ-HgsprPhhwq1xpPMv8Yaq1vq8Fby7SHW-JDcIqmCnR-wEJcOOcDn7v5B6xebeNX3EiuZsOdDQI3fepnUfpps3Bti3Wrek2T4s9MFYlgVYFZVUtmW5Nu2JXFilLzxhyYIeFNMD6IZBfrc8tqdZmKEEaroOOFf0TxWYbpXtFmIVCjJZsbR7zibFtDD4vuMS5AeOKjTIAPAuP2v_yuM2gPprjqz__Hh8MDswm-qqLj0");'>
+                                </div>
+                                <div>
+                                    <p class="text-base font-medium leading-normal">Perpustakaan &amp; Ruang Belajar</p>
+                                    <p
+                                        class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">
+                                        Koleksi materi pembelajaran lengkap untuk menunjang studi mandiri.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-3 pb-3 bg-card-light dark:bg-card-dark p-4 rounded-xl group">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="Communal lounge area with sofas for students to relax and interact."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqdyX-rDAu0WVTfhrHUiwiDDRpXFFSA_bdgDI8E6qZvjp0Qkp7rxtWCiJ6WyW6KgMLFK27p7q4tGny66hOeJtn-Tb_q2efPHR4AvHzkrEWk1LpevLZmNGoepEwPIpdK-kgK_PVaKgSutU-yuqgGnj5yuIpkwC4YPS8jDdmwUlqd0fW1nnJUvenMJr9IMs-c7eDXeCQgnpkukxLppj1vo8fzhi-AN5CvM1nPVyIDUuXfckhH_-qT44FM0UJDCX9tvZus7yY3gJcgx4");'>
+                                </div>
+                                <div>
+                                    <p class="text-base font-medium leading-normal">Area Komunal</p>
+                                    <p
+                                        class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">
+                                        Ruang santai untuk berinteraksi dan berdiskusi dengan sesama siswa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CTASection -->
+                <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-10">
+                    <div class="w-full">
+                        <div class="@container">
+                            <div
+                                class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+                                <div class="flex flex-col gap-2 text-center">
+                                    <h1
+                                        class="tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-3xl mx-auto">
+                                        Siap Memulai Karir Anda di Jepang?</h1>
+                                </div>
+                                <div class="flex flex-1 justify-center">
+                                    <div class="flex justify-center">
+                                        <button
+                                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow hover:bg-opacity-90 transition-opacity">
+                                            <span class="truncate">Daftar Sekarang</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="bg-card-light dark:bg-card-dark">
+                <div class="mx-auto w-full max-w-screen-xl p-8 py-6 lg:py-8">
+                    <div class="md:flex md:justify-between">
+                        <div class="mb-6 md:mb-0">
+                            <a class="flex items-center" href="#">
+                                <div class="size-6 mr-3 text-primary">
+                                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <span class="self-center text-2xl font-semibold whitespace-nowrap">LPK Mori</span>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                            <div>
+                                <h2 class="mb-6 text-sm font-semibold uppercase">Resources</h2>
+                                <ul class="text-subtext-light dark:text-subtext-dark font-medium">
+                                    <li class="mb-4"><a class="hover:underline" href="#">Programs</a></li>
+                                    <li><a class="hover:underline" href="#">Registration</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 class="mb-6 text-sm font-semibold uppercase">Follow us</h2>
+                                <ul class="text-subtext-light dark:text-subtext-dark font-medium">
+                                    <li class="mb-4"><a class="hover:underline" href="#">Instagram</a></li>
+                                    <li><a class="hover:underline" href="#">Facebook</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 class="mb-6 text-sm font-semibold uppercase">Legal</h2>
+                                <ul class="text-subtext-light dark:text-subtext-dark font-medium">
+                                    <li class="mb-4"><a class="hover:underline" href="#">Privacy Policy</a></li>
+                                    <li><a class="hover:underline" href="#">Terms &amp; Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-6 border-slate-200 sm:mx-auto dark:border-slate-700 lg:my-8" />
+                    <div class="sm:flex sm:items-center sm:justify-between">
+                        <span class="text-sm text-subtext-light dark:text-subtext-dark sm:text-center">© 2024 <a
+                                class="hover:underline" href="#">LPK Mori™</a>. All Rights Reserved.</span>
+                        <div
+                            class="flex mt-4 sm:justify-center sm:mt-0 gap-5 text-subtext-light dark:text-subtext-dark">
+                            <!-- Social icons would go here -->
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

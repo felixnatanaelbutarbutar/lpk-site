@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tentang LPK Mori - Jembatan Anda Menuju Karir di Jepang</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#003366", // Deep Blue as requested
+                        "accent": "#E60026", // Bright Red as requested
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#101922",
+                        "section-light": "#F0F2F5",
+                        "section-dark": "#192734",
+                        "text-light": "#0d141b",
+                        "text-dark": "#f6f7f8",
+                        "text-muted-light": "#4c739a",
+                        "text-muted-dark": "#9ab3d0",
+                        "border-light": "#e7edf3",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL'0,
+                'wght'400,
+                'GRAD'0,
+                'opsz'24
+        }
+
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- TopNavBar Component -->
+            <header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+                <div class="flex justify-center px-4 sm:px-8 lg:px-10">
+                    <div
+                        class="flex w-full max-w-7xl items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 py-3">
+                        <div class="flex items-center gap-4 text-text-light dark:text-text-dark">
+                            <div class="size-6 text-primary">
+                                <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">LPK Mori</h2>
+                        </div>
+                        <nav class="hidden md:flex flex-1 justify-end gap-8">
+                            <div class="flex items-center gap-9">
+                                <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                                    href="#">Home</a>
+                                <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                                    href="#">Programs</a>
+                                <a class="text-primary dark:text-primary text-sm font-bold leading-normal"
+                                    href="#">About Us</a>
+                                <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                                    href="#">Contact</a>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-accent text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                                    <span class="truncate">Register</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-section-light dark:bg-section-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em]">
+                                    <span class="truncate">Login</span>
+                                </button>
+                            </div>
+                        </nav>
+                        <button
+                            class="md:hidden flex items-center justify-center rounded-lg h-10 w-10 bg-section-light dark:bg-section-dark">
+                            <span class="material-symbols-outlined text-text-light dark:text-text-dark">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <main class="flex flex-1 flex-col items-center py-5">
+                <div class="flex w-full max-w-7xl flex-col flex-1 px-4 sm:px-8 lg:px-10">
+                    <!-- HeroSection Component -->
+                    <section class="w-full @container">
+                        <div class="@[480px]:p-4">
+                            <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-6 text-center"
+                                data-alt="Successful LPK Mori alumni working in a professional setting in Japan"
+                                style='background-image: linear-gradient(rgba(0, 20, 40, 0.4) 0%, rgba(0, 20, 40, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsTPyXha-t08XR2ElgZhVElWSsYkT1w6EJnRuSfnT8ZOBsmz9_-AJfpNFobMpPczz4FFcWzr5NQpyHsE72Vn00scrBu0no0yaxghy8Xd8XRNANEBk3I4FwvvX1wmoq3nKkSQMJac0xfAisqZqUT7QdPobNFQ6NikHPUFg2-dcIEfr_V7gSp2GZWrPOj8OySn05P6HIOYHG2VkjDjD0yTlJqBkOD-GF-e5s6uZcYA_4VSSzdmUiaPK0EfHXDGyj5QXuiYt201EvlVM");'>
+                                <div class="flex flex-col gap-2 max-w-3xl">
+                                    <h1
+                                        class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+                                        Membangun Jembatan Menuju Karir Impian Anda di Jepang
+                                    </h1>
+                                    <p class="text-slate-200 text-base font-normal leading-normal @[480px]:text-lg">
+                                        Kami berkomitmen untuk mempersiapkan tenaga kerja terampil dan berkarakter untuk
+                                        sukses di Jepang.
+                                    </p>
+                                </div>
+                                <div class="flex-wrap gap-3 flex justify-center">
+                                    <button
+                                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-accent text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base">
+                                        <span class="truncate">Daftar Sekarang</span>
+                                    </button>
+                                    <button
+                                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-background-light text-text-light text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base">
+                                        <span class="truncate">Lihat Program Kami</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- History Section -->
+                    <section class="py-16 sm:py-20">
+                        <!-- SectionHeader Component -->
+                        <div class="text-center pb-10">
+                            <h2
+                                class="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-[-0.015em]">
+                                Sejarah Kami</h2>
+                            <p class="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto mt-2">Perjalanan
+                                kami dalam mencetak profesional siap kerja untuk pasar Jepang.</p>
+                        </div>
+                        <!-- Timeline Component -->
+                        <div
+                            class="grid grid-cols-[auto_1fr] md:grid-cols-[1fr_auto_1fr] gap-x-4 md:gap-x-8 max-w-3xl mx-auto">
+                            <!-- Timeline Item 1 -->
+                            <div class="hidden md:flex flex-col items-end text-right py-3 pr-8">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Pendirian LPK Mori</p>
+                                <p
+                                    class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Dimulai dengan visi untuk menjadi lembaga pelatihan terdepan.</p>
+                            </div>
+                            <div class="flex flex-col items-center gap-1">
+                                <div
+                                    class="flex items-center justify-center size-10 rounded-full bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark">
+                                    <span class="material-symbols-outlined text-primary text-2xl">flag</span>
+                                </div>
+                                <div class="w-[2px] bg-border-light dark:bg-border-dark h-full"></div>
+                            </div>
+                            <div class="flex flex-1 flex-col py-3 pl-4 md:pl-0 md:text-left">
+                                <p class="text-primary text-xl font-bold">2015</p>
+                                <p
+                                    class="md:hidden text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Pendirian LPK Mori</p>
+                                <p
+                                    class="md:hidden text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Dimulai dengan visi untuk menjadi lembaga pelatihan terdepan.</p>
+                            </div>
+                            <!-- Timeline Item 2 -->
+                            <div class="flex flex-1 flex-col text-right py-3 pr-8">
+                                <p class="text-primary text-xl font-bold">2017</p>
+                                <p
+                                    class="md:hidden text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Kemitraan Strategis Pertama</p>
+                                <p
+                                    class="md:hidden text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Menjalin kerjasama dengan perusahaan ternama di Jepang.</p>
+                            </div>
+                            <div class="flex flex-col items-center gap-1">
+                                <div class="w-[2px] bg-border-light dark:bg-border-dark h-full"></div>
+                                <div
+                                    class="flex items-center justify-center size-10 rounded-full bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark">
+                                    <span class="material-symbols-outlined text-primary text-2xl">handshake</span>
+                                </div>
+                                <div class="w-[2px] bg-border-light dark:bg-border-dark h-full"></div>
+                            </div>
+                            <div class="hidden md:flex flex-col items-start py-3 pl-8">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Kemitraan Strategis Pertama</p>
+                                <p
+                                    class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Menjalin kerjasama dengan perusahaan ternama di Jepang.</p>
+                            </div>
+                            <!-- Timeline Item 3 -->
+                            <div class="hidden md:flex flex-col items-end text-right py-3 pr-8">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Lulusan Angkatan Pertama</p>
+                                <p
+                                    class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Berhasil memberangkatkan angkatan pertama ke Jepang.</p>
+                            </div>
+                            <div class="flex flex-col items-center gap-1">
+                                <div class="w-[2px] bg-border-light dark:bg-border-dark h-full"></div>
+                                <div
+                                    class="flex items-center justify-center size-10 rounded-full bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark">
+                                    <span class="material-symbols-outlined text-primary text-2xl">school</span>
+                                </div>
+                                <div class="w-[2px] bg-border-light dark:bg-border-dark h-full"></div>
+                            </div>
+                            <div class="flex flex-1 flex-col py-3 pl-4 md:pl-0 md:text-left">
+                                <p class="text-primary text-xl font-bold">2018</p>
+                                <p
+                                    class="md:hidden text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Lulusan Angkatan Pertama</p>
+                                <p
+                                    class="md:hidden text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Berhasil memberangkatkan angkatan pertama ke Jepang.</p>
+                            </div>
+                            <!-- Timeline Item 4 -->
+                            <div class="flex flex-1 flex-col text-right py-3 pr-8">
+                                <p class="text-primary text-xl font-bold">2022</p>
+                                <p
+                                    class="md:hidden text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Ekspansi Fasilitas Pelatihan</p>
+                                <p
+                                    class="md:hidden text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Menambah fasilitas modern untuk mendukung pembelajaran.</p>
+                            </div>
+                            <div class="flex flex-col items-center gap-1">
+                                <div class="w-[2px] bg-border-light dark:bg-border-dark h-full"></div>
+                                <div
+                                    class="flex items-center justify-center size-10 rounded-full bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark">
+                                    <span class="material-symbols-outlined text-primary text-2xl">apartment</span>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex flex-col items-start py-3 pl-8">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">
+                                    Ekspansi Fasilitas Pelatihan</p>
+                                <p
+                                    class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">
+                                    Menambah fasilitas modern untuk mendukung pembelajaran.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Visi, Misi, Nilai Section -->
+                    <section class="py-16 sm:py-20 bg-section-light dark:bg-section-dark rounded-xl">
+                        <div class="px-4 sm:px-8">
+                            <!-- SectionHeader Component -->
+                            <div class="text-center pb-10">
+                                <h2
+                                    class="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-[-0.015em]">
+                                    Visi, Misi, dan Nilai-Nilai Kami</h2>
+                                <p class="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto mt-2">
+                                    Fondasi yang memandu setiap langkah dan keputusan kami.</p>
+                            </div>
+                            <!-- Icon/Card Grid Component -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                                <!-- Card 1: Visi -->
+                                <div
+                                    class="flex flex-col items-center text-center p-6 bg-background-light dark:bg-background-dark rounded-lg shadow-sm">
+                                    <div
+                                        class="flex items-center justify-center size-14 rounded-full bg-primary/10 mb-4">
+                                        <span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 text-text-light dark:text-text-dark">Visi</h3>
+                                    <p class="text-text-muted-light dark:text-text-muted-dark">Menjadi lembaga pelatihan
+                                        kerja terkemuka dan terpercaya yang menghasilkan tenaga kerja kompeten dan
+                                        berdaya saing global untuk Jepang.</p>
+                                </div>
+                                <!-- Card 2: Misi -->
+                                <div
+                                    class="flex flex-col items-center text-center p-6 bg-background-light dark:bg-background-dark rounded-lg shadow-sm">
+                                    <div
+                                        class="flex items-center justify-center size-14 rounded-full bg-primary/10 mb-4">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 text-text-light dark:text-text-dark">Misi</h3>
+                                    <p class="text-text-muted-light dark:text-text-muted-dark">Menyediakan pendidikan
+                                        berkualitas, membina pemahaman budaya, dan menjalin kemitraan strategis untuk
+                                        kesuksesan para siswa.</p>
+                                </div>
+                                <!-- Card 3: Nilai-Nilai -->
+                                <div
+                                    class="flex flex-col items-center text-center p-6 bg-background-light dark:bg-background-dark rounded-lg shadow-sm">
+                                    <div
+                                        class="flex items-center justify-center size-14 rounded-full bg-primary/10 mb-4">
+                                        <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 text-text-light dark:text-text-dark">Nilai-Nilai
+                                    </h3>
+                                    <p class="text-text-muted-light dark:text-text-muted-dark">Kami memegang teguh
+                                        Integritas, Disiplin, Profesionalisme, dan Kepedulian dalam semua aspek
+                                        operasional kami.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Image Gallery Section -->
+                    <section class="py-16 sm:py-20">
+                        <div class="text-center pb-10">
+                            <h2
+                                class="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-[-0.015em]">
+                                Fasilitas Kami</h2>
+                            <p class="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto mt-2">Lingkungan
+                                belajar yang modern dan kondusif untuk menunjang kesuksesan Anda.</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="grid gap-4">
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="Modern classroom with students learning Japanese language"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiX07kLKFy1y0u7Xydrutwh0oupenvvOnmu6OvaFT0kh_xoltxQ6sf_1vkgu3-vUA7dLZo84byvgQQ8j-pFqm88oJTfb9rKsPy76Z69Ry1PfhHrgXd1dZ2LwOAvG-FJs4RsNym5l46qH44U98qMB3FuBiDNG3NMZZdkiqn_x_uGuQ29RDtZC_HHVqDmYD_ZSlSxJFXQcdG2QLzj2_VKQSFaPxWtfviqrsOvTCoiKq39PLclaNRC6nrY_xlI324g73p6hD7yX3mTJk" />
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="Students collaborating in a language lab"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWgJiRDT0vw9zHA6SMGQ0FK38KV3sUNLV1S13H231ssUT2vJLK0y519Jr36xTW1i01ObGuGZdddC15rjiks0eL75vQGtnbfZwvZ_9Q1bPaIy_rOUdBRm8tdo6PxzIeFSgAjAaTweQinPLKdG_WNd8LpTNKrB7LC1EgcHdlqbZu2rU7s5Hu3kiOVfsyA4lp5qoAj9xrMzbWeOvjEemt3fwjY-Y9-Nl4vLVhzZ4Sort9A938JKn_XoGwa3jUNBAm_CP0SLIAD-YtYLo" />
+                            </div>
+                            <div class="grid gap-4">
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="Practical training session in a workshop"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhNQW52oEptKanoHwFIfdu1ZieU2PL9vchIC0wA-ytKa_I9t_V020OQHcZrjk38rliKw5VnhuiJMcOIzaeAk0gy0DTiEaeYGtuP8CbWVMOel8gv1CTQ0KUa1ihaOudhmNqBJVfZVIWqPeLQWnGPpNsMkwyMXbCEwnMBuxaxKZmUZgj0vKDNO0VA7geWnfUhXOk8Yppz9E_UO1v73g_IrS8GSwFno4_kECccd9wZxLD-hmsVAyM--AIUH4eA5VJYh3FPQU3Hw_yBNo" />
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="LPK Mori library with extensive learning resources"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6_jgydA95nmcL6M5Qw_7Gl9v93MljYEUrOAN8DARWA1jMVMBpfI8CBS6z5QS-UraMMLmLjL80stnpAQyBx-mqc9YQmyQLotmMrIAv_0NGgkLaVJ6F-BdaNahtlPPueiBkEf4wGwdc8nS1qifw8rUqWgmFBYAzZDFGnjZD-e6Uszq41pwI0DnHhF0UrSad3wNoQpa6yFU03Gaq1BkY9K3vwbQeVkBYdWPboLj6lxrsZ9j98psyvvOfrovSbi2pblQRJlzFxKfMIGc" />
+                            </div>
+                            <div class="grid gap-4">
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="Cultural exchange activity with Japanese instructors"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWbjeXZSQRXE0qtQvHedZ_GL2QB-6d_AWUz2FDWRPzvMM_Nx9HekCqDbRd049uUrEKSLMxZvHsL57_FAXM7CDRIykr339gz3OkxLjzcMiLeip-Ucr7_07jvLK9O8GDv5sPB2HyACxgLWxRglyC_0nbryMotfapxJAq4GuuG-0Hdp49vfQCXtrqiB2ZD29RAgZ-CwGL6iFBiXLwLIWPRUj7-IghGuRYdpZ7f1lMk7Bm_9_vYqQo_X7Q1glLEvGOS9ECUgwBqU_Vbcw" />
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="Comfortable student lounge area for relaxation"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdaXIebTLaCOur_R0jcbBFdOIe7jneS5AiX_4afYGDVL4MiNT1BK1uLDDul6ELfqj8i3rTEtHQP-HrMhu-xILn_TmWga2CkYtrDoh_3A3q_0rvLmL3u4DvtAOaHiGU9N0UkZS_DZxcR0qsnTz5zUmrdA3vfI01Dzxp_3u0TIvtToMwQXzsOkp8YYYWRNdZc9YaRWc1Nkm0O4pOJnxxSYm8aygMPMAr5FK9G_2ibLUzrVOfhh-5v1vi5Hocw-ADFqnQfuRKGZC5IR8" />
+                            </div>
+                            <div class="grid gap-4">
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="Graduation ceremony for LPK Mori students"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm6laK-n4GCKRbMAP3sZkRKV4DOAYdt-kGFnA4TMaZBjL8zHwgHAjcnXrF8Bt3Tk4zWDYrWya_Jvgk-DuE7ZuCb7J-nrPpI77vX5A6G_mw6ElUu_TIlNIcDyfZ_4j48wjjh96N_6N3AAh78_nXSiPonh3CDy_QIvWZ1QFYVS3Cmst7nsLK1_mCxThiv8EsTckM5J_vriXdSs15B_WrVgRbepkD_TXvf-KDN1IktojIDd5Llq5fT--1ROZUZ_3uaPbBIhJE97lWHVM" />
+                                <img class="h-auto max-w-full rounded-lg object-cover"
+                                    data-alt="Outdoor campus area for student activities"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT89DZIyf513SSk90tvQgqo7efx4uxGgVIkvEd5J-0Oy1AJu5yEee-YuSwHSDpER5V2Yj7WKzR_eMlduyWxyCdrG9cM-f65Cx1p0aMW3GTX1e0U7-MAQ_yUyKWQU-B811x5aSEGQjL_iiIuDB0gSUXFGcPRMoYCERcHKrO6z-2eq1nV_O43s8D99TBwotV1LFN5-sK1CugyxyxK-sgimsNCc4rpT-xskRs6oqFf853Up-ZPFQSr8thAMhsyCAvvJij_RXadYpVk3w" />
+                            </div>
+                        </div>
+                    </section>
+                    <!-- CTA Section -->
+                    <section class="my-10">
+                        <div class="w-full bg-primary text-white rounded-xl p-8 md:p-12 text-center">
+                            <h2 class="text-3xl font-bold mb-2">Siap Memulai Perjalanan Anda?</h2>
+                            <p class="max-w-xl mx-auto mb-6">Bergabunglah dengan ratusan alumni sukses kami yang telah
+                                membangun karir impian di Jepang. Ambil langkah pertama Anda hari ini.</p>
+                            <button
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-accent text-white text-base font-bold leading-normal tracking-[0.015em] mx-auto">
+                                <span class="truncate">Daftar Sekarang</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <!-- Footer Component -->
+            <footer class="w-full bg-section-light dark:bg-section-dark">
+                <div class="max-w-7xl mx-auto py-12 px-4 sm:px-8 lg:px-10">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-text-light dark:text-text-dark">LPK Mori</h3>
+                            <p class="mt-2 text-sm text-text-muted-light dark:text-text-muted-dark">Jl. Pelatihan No.
+                                123, Jakarta, Indonesia 12345</p>
+                            <p class="mt-1 text-sm text-text-muted-light dark:text-text-muted-dark">info@lpkmori.com</p>
+                            <p class="mt-1 text-sm text-text-muted-light dark:text-text-muted-dark">(021) 555-0123</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-text-light dark:text-text-dark">Quick Links</h4>
+                            <ul class="mt-2 space-y-2">
+                                <li><a class="text-sm text-text-muted-light dark:text-text-muted-dark hover:text-primary"
+                                        href="#">Home</a></li>
+                                <li><a class="text-sm text-text-muted-light dark:text-text-muted-dark hover:text-primary"
+                                        href="#">Programs</a></li>
+                                <li><a class="text-sm text-text-muted-light dark:text-text-muted-dark hover:text-primary"
+                                        href="#">About Us</a></li>
+                                <li><a class="text-sm text-text-muted-light dark:text-text-muted-dark hover:text-primary"
+                                        href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-text-light dark:text-text-dark">Legal</h4>
+                            <ul class="mt-2 space-y-2">
+                                <li><a class="text-sm text-text-muted-light dark:text-text-muted-dark hover:text-primary"
+                                        href="#">Privacy Policy</a></li>
+                                <li><a class="text-sm text-text-muted-light dark:text-text-muted-dark hover:text-primary"
+                                        href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-text-light dark:text-text-dark">Follow Us</h4>
+                            <div class="flex mt-2 space-x-4">
+                                <!-- Social Icons would go here -->
+                                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+                                        <path clip-rule="evenodd"
+                                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                            fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+                                        <path clip-rule="evenodd"
+                                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm0 1.62c-2.403 0-2.72.01-3.667.058-1.146.052-1.602.248-1.922.558-.33.31-.506.77-.558 1.922-.048.947-.058 1.264-.058 3.667s.01 2.72.058 3.667c.052 1.146.248 1.602.558 1.922.31.33.77.506 1.922.558.947.048 1.264.058 3.667.058s2.72-.01 3.667-.058c1.146-.052 1.602-.248 1.922-.558.33-.31.506-.77.558-1.922.048-.947.058-1.264.058-3.667s-.01-2.72-.058-3.667c-.052-1.146-.248-1.602-.558-1.922-.31-.33-.77-.506-1.922-.558-.947-.048-1.264-.058-3.667-.058zM12 8.118c-2.193 0-3.968 1.775-3.968 3.968s1.775 3.968 3.968 3.968 3.968-1.775 3.968-3.968-1.775-3.968-3.968-3.968zm0 6.318c-1.3 0-2.35-1.05-2.35-2.35s1.05-2.35 2.35-2.35 2.35 1.05 2.35 2.35-1.05 2.35-2.35 2.35zm5.405-6.168c-.606 0-1.095.49-1.095 1.095s.49 1.095 1.095 1.095 1.095-.49 1.095-1.095-.49-1.095-1.095-1.095z"
+                                            fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-8 border-t border-border-light dark:border-border-dark pt-8 text-center text-sm text-text-muted-light dark:text-text-muted-dark">
+                        <p>© 2024 LPK Mori. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
