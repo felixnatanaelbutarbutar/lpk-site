@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LPK Mori Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2B3A67",
+                        "accent": "#E63946",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#101922",
+                        "text-light": "#343A40",
+                        "text-light-secondary": "#6C757D",
+                        "text-dark": "#F8F9FA",
+                        "text-dark-secondary": "#6C757D",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL'0,
+                'wght'400,
+                'GRAD'0,
+                'opsz'24
+        }
+
+    </style>
+</head>
+
+<body class="font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
+        <div class="flex h-full w-full">
+            <!-- SideNavBar -->
+            <aside
+                class="flex h-screen w-64 flex-col justify-between border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 sticky top-0">
+                <div class="flex flex-col gap-8">
+                    <div class="flex items-center gap-3 px-3">
+                        <div class="size-8 text-primary">
+                            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
+                                    fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h1 class="text-text-light dark:text-text-dark text-xl font-bold">LPK Mori</h1>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-DEFAULT bg-primary/10 px-3 py-2 text-primary dark:bg-primary/20"
+                            href="#">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-DEFAULT px-3 py-2 text-text-light-secondary hover:bg-slate-100 dark:text-text-dark-secondary dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">info</span>
+                            <p class="text-sm font-medium">About Us</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-DEFAULT px-3 py-2 text-text-light-secondary hover:bg-slate-100 dark:text-text-dark-secondary dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">apartment</span>
+                            <p class="text-sm font-medium">Facilities</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-DEFAULT px-3 py-2 text-text-light-secondary hover:bg-slate-100 dark:text-text-dark-secondary dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">photo_library</span>
+                            <p class="text-sm font-medium">Gallery</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-DEFAULT px-3 py-2 text-text-light-secondary hover:bg-slate-100 dark:text-text-dark-secondary dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">group</span>
+                            <p class="text-sm font-medium">Applicants</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-DEFAULT px-3 py-2 text-text-light-secondary hover:bg-slate-100 dark:text-text-dark-secondary dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">settings</span>
+                            <p class="text-sm font-medium">Settings</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <a class="flex items-center gap-3 rounded-DEFAULT px-3 py-2 text-text-light-secondary hover:bg-slate-100 dark:text-text-dark-secondary dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <!-- Main Content -->
+            <main class="flex-1">
+                <!-- TopNavBar -->
+                <header
+                    class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-4 sticky top-0 z-10">
+                    <div class="flex flex-1 items-center gap-8">
+                        <label class="relative flex min-w-40 max-w-sm flex-col">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-light-secondary dark:text-text-dark-secondary">search</span>
+                            <input
+                                class="form-input h-10 w-full rounded-DEFAULT border-slate-200 bg-background-light dark:border-slate-800 dark:bg-slate-900/50 pl-10 text-base font-normal text-text-light dark:text-text-dark placeholder:text-text-light-secondary focus:border-primary focus:ring-primary/20 focus:ring-2"
+                                placeholder="Search applicant..." value="" />
+                        </label>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex flex-col text-right">
+                            <p class="text-base font-medium text-text-light dark:text-text-dark">Admin Name</p>
+                            <p class="text-sm text-text-light-secondary">Administrator</p>
+                        </div>
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12"
+                            data-alt="Admin user avatar"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_PNk4Y-j2xwxQyIojFx2N9Vm4x4AwCL25_2xYDdHAc2cFkvQ9Te-7Bg8kCczwzwKCa_PcsUAMowA1sMbZU3b_z0XZSlXqwkPmjlYrU1mAoGT82YqyHLcUvcNPB0uTX8lb5_cvfzhgpDPm8UIeCLoUuEUwW5XMkb4mvn0CdntwsFuX4V5rWKOSuPC1VUufawV6QMTVN04tPTcdUZptYsvwyNF-YO-IDK7MKBlckKmhw_jB1XDl9-9kNLKXis_829W7pa06VIGEZVA');">
+                        </div>
+                    </div>
+                </header>
+                <div class="p-10">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex min-w-72 flex-col gap-1">
+                            <h1 class="text-3xl font-bold text-text-light dark:text-text-dark">Welcome, Admin!</h1>
+                            <p class="text-base font-normal text-text-light-secondary">Here's a summary of your
+                                website's activity.</p>
+                        </div>
+                    </div>
+                    <!-- Stats -->
+                    <div class="grid grid-cols-1 gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
+                        <div
+                            class="flex flex-col gap-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+                            <p class="text-base font-medium text-text-light-secondary">Total Applicants</p>
+                            <p class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark">1,204</p>
+                            <p class="text-sm font-medium text-green-600">+15.2%</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+                            <p class="text-base font-medium text-text-light-secondary">New Applicants (This Month)</p>
+                            <p class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark">85</p>
+                            <p class="text-sm font-medium text-green-600">+20.1%</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+                            <p class="text-base font-medium text-text-light-secondary">Pending Applications</p>
+                            <p class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark">23</p>
+                            <p class="text-sm font-medium text-orange-500">-5.4%</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+                            <p class="text-base font-medium text-text-light-secondary">Content Pages</p>
+                            <p class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark">4</p>
+                            <p class="text-sm font-medium text-text-light-secondary">+0%</p>
+                        </div>
+                    </div>
+                    <!-- SectionHeader & Data Table -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-bold text-text-light dark:text-text-dark">Online Applicants</h2>
+                            <button
+                                class="flex items-center gap-2 rounded-DEFAULT bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90">
+                                <span class="material-symbols-outlined text-base">add</span>
+                                Add New Applicant
+                            </button>
+                        </div>
+                        <div class="w-full overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800">
+                            <div class="overflow-x-auto">
+                                <table class="w-full min-w-max text-left text-sm text-text-light dark:text-text-dark">
+                                    <thead
+                                        class="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                                        <tr>
+                                            <th class="px-6 py-3 font-semibold" scope="col">Name</th>
+                                            <th class="px-6 py-3 font-semibold" scope="col">Registration Date</th>
+                                            <th class="px-6 py-3 font-semibold" scope="col">Status</th>
+                                            <th class="px-6 py-3 font-semibold text-right" scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white dark:bg-slate-900">
+                                        <tr class="border-b border-slate-200 dark:border-slate-800">
+                                            <td class="px-6 py-4 font-medium">Budi Santoso</td>
+                                            <td class="px-6 py-4 text-text-light-secondary">2024-05-18</td>
+                                            <td class="px-6 py-4">
+                                                <span
+                                                    class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:text-green-300">Approved</span>
+                                            </td>
+                                            <td class="px-6 py-4 text-right">
+                                                <div class="flex items-center justify-end gap-2">
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">visibility</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">edit</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-accent"><span
+                                                            class="material-symbols-outlined text-xl">delete</span></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-slate-200 dark:border-slate-800">
+                                            <td class="px-6 py-4 font-medium">Citra Lestari</td>
+                                            <td class="px-6 py-4 text-text-light-secondary">2024-05-17</td>
+                                            <td class="px-6 py-4">
+                                                <span
+                                                    class="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/50 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:text-yellow-300">Pending</span>
+                                            </td>
+                                            <td class="px-6 py-4 text-right">
+                                                <div class="flex items-center justify-end gap-2">
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">visibility</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">edit</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-accent"><span
+                                                            class="material-symbols-outlined text-xl">delete</span></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-slate-200 dark:border-slate-800">
+                                            <td class="px-6 py-4 font-medium">Adi Nugroho</td>
+                                            <td class="px-6 py-4 text-text-light-secondary">2024-05-15</td>
+                                            <td class="px-6 py-4">
+                                                <span
+                                                    class="inline-flex items-center rounded-full bg-red-100 dark:bg-red-900/50 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:text-red-300">Rejected</span>
+                                            </td>
+                                            <td class="px-6 py-4 text-right">
+                                                <div class="flex items-center justify-end gap-2">
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">visibility</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">edit</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-accent"><span
+                                                            class="material-symbols-outlined text-xl">delete</span></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 font-medium">Dewi Anjani</td>
+                                            <td class="px-6 py-4 text-text-light-secondary">2024-05-12</td>
+                                            <td class="px-6 py-4">
+                                                <span
+                                                    class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:text-green-300">Approved</span>
+                                            </td>
+                                            <td class="px-6 py-4 text-right">
+                                                <div class="flex items-center justify-end gap-2">
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">visibility</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-primary"><span
+                                                            class="material-symbols-outlined text-xl">edit</span></button>
+                                                    <button
+                                                        class="p-1.5 text-text-light-secondary hover:text-accent"><span
+                                                            class="material-symbols-outlined text-xl">delete</span></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div
+                                class="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 sm:px-6">
+                                <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                                    <div>
+                                        <p class="text-sm text-text-light-secondary">Showing <span
+                                                class="font-medium">1</span> to <span class="font-medium">4</span> of
+                                            <span class="font-medium">1,204</span> results</p>
+                                    </div>
+                                    <div>
+                                        <nav aria-label="Pagination"
+                                            class="isolate inline-flex -space-x-px rounded-DEFAULT shadow-sm">
+                                            <a class="relative inline-flex items-center rounded-l-DEFAULT px-2 py-2 text-text-light-secondary ring-1 ring-inset ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:z-20 focus:outline-offset-0"
+                                                href="#">
+                                                <span class="material-symbols-outlined text-xl">chevron_left</span>
+                                            </a>
+                                            <a aria-current="page"
+                                                class="relative z-10 inline-flex items-center bg-primary px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                                                href="#">1</a>
+                                            <a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-text-light-secondary ring-1 ring-inset ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:z-20 focus:outline-offset-0"
+                                                href="#">2</a>
+                                            <a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-text-light-secondary ring-1 ring-inset ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:z-20 focus:outline-offset-0"
+                                                href="#">3</a>
+                                            <a class="relative inline-flex items-center rounded-r-DEFAULT px-2 py-2 text-text-light-secondary ring-1 ring-inset ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:z-20 focus:outline-offset-0"
+                                                href="#">
+                                                <span class="material-symbols-outlined text-xl">chevron_right</span>
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
