@@ -3,7 +3,8 @@
 namespace App\Services;
 
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Log;   // TAMBAHKAN INI
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class TranslationService
 {
@@ -18,21 +19,36 @@ class TranslationService
     {
         if (empty($text)) return null;
 
-        $url = 'https://api.mymemory.translated.net/get';
-        
-        try {
-            $response = $this->client->get($url, [
-                'query' => [
-                    'q' => $text,
-                    'langpair' => "{$sourceLang}|{$targetLang}"
-                ]
-            ]);
+        $cacheKey = "translate:{$sourceLang}:{$targetLang}:" . md5($text);
 
-            $data = json_decode($response->getBody(), true);
-            return $data['responseData']['translatedText'] ?? $text;
-        } catch (\Exception $e) {
-            Log::warning("Translation failed: " . $e->getMessage());  // Sekarang jalan
-            return $text;
-        }
+        return Cache::remember($cacheKey, now()->addDay(), function () use ($text, $sourceLang, $targetLang) {
+            $url = 'https://translate.googleapis.com/translate_a/single';
+
+            try {
+                $response = $this->client->get($url, [
+                    'query' => [
+                        'client' => 'gtx',
+                        'sl' => $sourceLang,
+                        'tl' => $targetLang,
+                        'dt' => 't',
+                        'q' => $text
+                    ],
+                    'timeout' => 10
+                ]);
+
+                $result = json_decode($response->getBody(), true);
+                $translated = $result[0][0][0] ?? $text;
+
+                if ($translated !== $text) {
+                    Log::info("Translated: '$text' → '$translated' ($targetLang)");
+                }
+
+                return $translated;
+
+            } catch (\Exception $e) {
+                Log::warning("Translate failed: " . $e->getMessage());
+                return $text;
+            }
+        });
     }
 }

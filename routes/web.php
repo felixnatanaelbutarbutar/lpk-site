@@ -6,7 +6,9 @@ use App\Http\Controllers\Admin\PendaftaranAdminController;
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\Admin\FasilitasController;
+use App\Http\Controllers\Admin\GaleriController;
+use App\Http\Controllers\Admin\AlumniController;
 // ==================================================================
 // 1. HALAMAN PUBLIK (tanpa auth)
 // ==================================================================
@@ -91,9 +93,32 @@ Route::middleware(['auth', 'admin', 'set.locale'])
 
          Route::patch('/pendaftaran/{pendaftaran}/reject', [PendaftaranAdminController::class, 'reject'])
               ->name('pendaftaran.reject');
+        // Routes unutk fasilitas..      
+// PAKSA MANUAL → {fasilitas}
+        Route::get('fasilitas', [FasilitasController::class, 'index'])->name('fasilitas.index');
+        Route::get('fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
+        Route::post('fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
+        Route::get('fasilitas/{fasilitas}', [FasilitasController::class, 'show'])->name('fasilitas.show');
+        Route::get('fasilitas/{fasilitas}/edit', [FasilitasController::class, 'edit'])->name('fasilitas.edit');
+        Route::put('fasilitas/{fasilitas}', [FasilitasController::class, 'update'])->name('fasilitas.update');
+        Route::delete('fasilitas/{fasilitas}', [FasilitasController::class, 'destroy'])->name('fasilitas.destroy');
 
          // === FITUR ADMIN LAIN (jika ada) ===
+         Route::get('galeri', [GaleriController::class, 'index'])->name('galeri.index');
+        Route::get('galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
+        Route::post('galeri', [GaleriController::class, 'store'])->name('galeri.store');
+        Route::get('galeri/{galeri}', [GaleriController::class, 'show'])->name('galeri.show');
+        Route::get('galeri/{galeri}/edit', [GaleriController::class, 'edit'])->name('galeri.edit');
+        Route::put('galeri/{galeri}', [GaleriController::class, 'update'])->name('galeri.update');
+        Route::delete('galeri/{galeri}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
          // Route::resource('registrations', Admin\RegistrationController::class)->only(['index', 'show', 'update']);
+         Route::get('alumni', [AlumniController::class, 'index'])->name('alumni.index');
+        Route::get('alumni/create', [AlumniController::class, 'create'])->name('alumni.create');
+        Route::post('alumni', [AlumniController::class, 'store'])->name('alumni.store');
+        Route::get('alumni/{alumni}', [AlumniController::class, 'show'])->name('alumni.show');
+        Route::get('alumni/{alumni}/edit', [AlumniController::class, 'edit'])->name('alumni.edit');
+        Route::put('alumni/{alumni}', [AlumniController::class, 'update'])->name('alumni.update');
+        Route::delete('alumni/{alumni}', [AlumniController::class, 'destroy'])->name('alumni.destroy');
          // Route::resource('users', Admin\UserController::class)->only(['index', 'update']);
          // Route::view('settings', 'admin.settings.index')->name('settings.index');
      });

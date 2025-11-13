@@ -140,7 +140,67 @@ if (!function_exists('translateText')) {
                 'ja' => '今すぐ日本プログラムに登録しましょう！'
             ],
             'Daftar Sekarang' => ['id' => 'Daftar Sekarang', 'en' => 'Register Now', 'ja' => '今すぐ登録'],
-        ];
+            'Manajemen Fasilitas' => ['id' => 'Manajemen Fasilitas', 'en' => 'Facility Management', 'ja' => '施設管理'],
+            'Daftar Fasilitas' => ['id' => 'Daftar Fasilitas', 'en' => 'Facility List', 'ja' => '施設一覧'],
+            'Tambah Fasilitas' => ['id' => 'Tambah Fasilitas', 'en' => 'Add Facility', 'ja' => '施設を追加'],
+            'Tambah Fasilitas Baru' => ['id' => 'Tambah Fasilitas Baru', 'en' => 'Add New Facility', 'ja' => '新しい施設を追加'],
+            'Gambar Fasilitas' => ['id' => 'Gambar Fasilitas', 'en' => 'Facility Image', 'ja' => '施設画像'],
+            'Ganti Gambar' => ['id' => 'Ganti Gambar', 'en' => 'Change Image', 'ja' => '画像を変更'],
+            'Gambar Saat Ini' => ['id' => 'Gambar Saat Ini', 'en' => 'Current Image', 'ja' => '現在の画像'],
+            'Fasilitas berhasil ditambahkan!' => ['id' => 'Fasilitas berhasil ditambahkan!', 'en' => 'Facility added!', 'ja' => '施設が追加されました！'],
+            'Fasilitas berhasil diperbarui!' => ['id' => 'Fasilitas berhasil diperbarui!', 'en' => 'Facility updated!', 'ja' => '施設が更新されました！'],
+            'Fasilitas dihapus!' => ['id' => 'Fasilitas dihapus!', 'en' => 'Facility deleted!', 'ja' => '施設が削除されました！'],
+            'Hapus fasilitas ini?' => ['id' => 'Hapus fasilitas ini?', 'en' => 'Delete this facility?', 'ja' => 'この施設を削除しますか？'],
+            'Belum ada fasilitas.' => ['id' => 'Belum ada fasilitas.', 'en' => 'No facilities yet.', 'ja' => 'まだ施設はありません。'],
+            'Otomatis diterjemahkan ke Inggris & Jepang' => ['id' => 'Otomatis diterjemahkan ke Inggris & Jepang', 'en' => 'Auto-translated to English & Japanese', 'ja' => '英語と日本語に自動翻訳'],
+            'Otomatis diterjemahkan ulang' => ['id' => 'Otomatis diterjemahkan ulang', 'en' => 'Auto re-translated', 'ja' => '自動再翻訳'],
+            'Kelola fasilitas sekolah' => [
+                'id' => 'Kelola fasilitas sekolah',
+                'en' => 'Manage school facilities',
+                'ja' => '学校施設の管理'
+            ],
+            'Gambar' => [
+                'id' => 'Gambar',
+                'en' => 'Image',
+                'ja' => '画像'
+            ],
+            'Deskripsi' => [
+                'id' => 'Deskripsi',
+                'en' => 'Description',
+                'ja' => '説明'
+            ],
+            'Galeri Sekolah' => ['id' => 'Galeri Sekolah', 'en' => 'School Gallery', 'ja' => '学校ギャラリー'],
+            'Tambah Gambar' => ['id' => 'Tambah Gambar', 'en' => 'Add Image', 'ja' => '画像を追加'],
+            'Bisa pilih banyak gambar' => ['id' => 'Bisa pilih banyak gambar', 'en' => 'You can select multiple images', 'ja' => '複数の画像を選択できます'],
+            'Caption (opsional)' => ['id' => 'Caption (opsional)', 'en' => 'Caption (optional)', 'ja' => 'キャプション（任意）'],
+            'Galeri berhasil ditambahkan!' => ['id' => 'Galeri berhasil ditambahkan!', 'en' => 'Gallery added successfully!', 'ja' => 'ギャラリーが正常に追加されました！'],
+            'Gambar dihapus!' => ['id' => 'Gambar dihapus!', 'en' => 'Image deleted!', 'ja' => '画像が削除されました！'],
+            'Hapus gambar ini?' => ['id' => 'Hapus gambar ini?', 'en' => 'Delete this image?', 'ja' => 'この画像を削除しますか？'],
+            'Belum ada gambar di galeri.' => ['id' => 'Belum ada gambar di galeri.', 'en' => 'No images in gallery yet.', 'ja' => 'まだギャラリーに画像がありません。'],
+            'Edit Gambar Galeri' => ['id' => 'Edit Gambar Galeri', 'en' => 'Edit Gallery Image', 'ja' => 'ギャラリー画像を編集'],
+            'Ganti Gambar' => ['id' => 'Ganti Gambar', 'en' => 'Change Image', 'ja' => '画像を変更'],
+            'Kosongkan jika tidak ingin ganti' => ['id' => 'Kosongkan jika tidak ingin ganti', 'en' => 'Leave empty if not changing', 'ja' => '変更しない場合は空にしてください'],
+            'Simpan Perubahan' => ['id' => 'Simpan Perubahan', 'en' => 'Save Changes', 'ja' => '変更を保存'],
+            'Galeri berhasil diperbarui!' => ['id' => 'Galeri berhasil diperbarui!', 'en' => 'Gallery updated successfully!', 'ja' => 'ギャラリーが正常に更新されました！'],
+            'Edit' => ['id' => 'Edit', 'en' => 'Edit', 'ja' => '編集'],
+            'Hapus' => ['id' => 'Hapus', 'en' => 'Delete', 'ja' => '削除'],
+            'Tambah Gambar' => ['id' => 'Tambah Gambar', 'en' => 'Add Image', 'ja' => '画像を追加'],
+            'Belum ada gambar di galeri' => ['id' => 'Belum ada gambar di galeri', 'en' => 'No images in gallery yet', 'ja' => 'まだギャラリーに画像がありません'],
+            'Tambahkan gambar pertama Anda sekarang!' => ['id' => 'Tambahkan gambar pertama Anda sekarang!', 'en' => 'Add your first image now!', 'ja' => '最初の画像を今すぐ追加しましょう！'],
+            'Alumni' => ['id' => 'Alumni', 'en' => 'Alumni', 'ja' => '卒業生'],
+            'Tambah Alumni' => ['id' => 'Tambah Alumni', 'en' => 'Add Alumni', 'ja' => '卒業生を追加'],
+            'Daftar Alumni' => ['id' => 'Daftar Alumni', 'en' => 'Alumni List', 'ja' => '卒業生リスト'],
+            'Nama Lengkap' => ['id' => 'Nama Lengkap', 'en' => 'Full Name', 'ja' => 'フルネーム'],
+            'Jurusan' => ['id' => 'Jurusan', 'en' => 'Major', 'ja' => '専攻'],
+            'Tahun Lulus' => ['id' => 'Tahun Lulus', 'en' => 'Graduation Year', 'ja' => '卒業年'],
+            'Pesan / Testimoni' => ['id' => 'Pesan / Testimoni', 'en' => 'Message / Testimonial', 'ja' => 'メッセージ / 証言'],
+            'Kata Alumni' => ['id' => 'Kata Alumni', 'en' => 'Alumni Words', 'ja' => '卒業生の声'],
+            'Alumni berhasil ditambahkan!' => ['id' => 'Alumni berhasil ditambahkan!', 'en' => 'Alumni added successfully!', 'ja' => '卒業生が正常に追加されました！'],
+            'Program' => ['id' => 'Program', 'en' => 'Program', 'ja' => 'プログラム'],
+            'Ganti Foto' => ['id' => 'Ganti Foto', 'en' => 'Change Photo', 'ja' => '写真を変更'],
+            'Kosongkan jika tidak ingin ganti' => ['id' => 'Kosongkan jika tidak ingin ganti', 'en' => 'Leave empty if not changing', 'ja' => '変更しない場合は空にしてください'],
+            'Simpan Perubahan' => ['id' => 'Simpan Perubahan', 'en' => 'Save Changes', 'ja' => '変更を保存'],
+            ];
 
 
         // Pastikan $text ada di kamus
