@@ -90,4 +90,5 @@ class GaleriController extends Controller
 
         return back()->with('success', translateText('Gambar dihapus!'));
     }
+    
 }

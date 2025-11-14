@@ -171,15 +171,15 @@
         <dl class="space-y-4 text-sm">
           <div class="flex justify-between border-b border-gray-100 pb-3">
             <dt class="text-gray-600">Nama Perusahaan</dt>
-            <dd class="font-medium text-gray-900">LPK Minori Medan</dd>
+            <dd class="font-medium text-gray-900">LPK Mori Silangit</dd>
           </div>
           <div class="flex justify-between border-b border-gray-100 pb-3">
             <dt class="text-gray-600">Direktur</dt>
-            <dd class="font-medium text-gray-900">Maruli Marpaung</dd>
+            <dd class="font-medium text-gray-900">Felix Butarbutar</dd>
           </div>
           <div class="flex justify-between border-b border-gray-100 pb-3">
             <dt class="text-gray-600">Tanggal Pendirian</dt>
-            <dd class="font-medium text-gray-900">Oktober 2009</dd>
+            <dd class="font-medium text-gray-900">Oktober 2020</dd>
           </div>
           <div class="flex justify-between pb-3">
             <dt class="text-gray-600">NPWP</dt>
@@ -271,7 +271,7 @@
           </div>
           <h3 class="font-bold text-xl" style="color: #f84e01;">Ginou Jisshuu (Magang)</h3>
         </div>
-        
+
         <p class="text-gray-600 leading-relaxed mb-6">
           Program kerja ke Jepang tanpa memerlukan sertifikat keahlian bidang kerja. Cocok untuk fresh graduate atau yang ingin memulai karir di Jepang dengan bimbingan intensif.
         </p>
@@ -300,7 +300,7 @@
         <div class="flex items-center justify-between pt-4 border-t" style="border-top-color: #f84e01;">
           <span class="px-3 py-1.5 rounded-lg font-medium text-sm" style="background-color: #f84e01; color: white;">12-16 Minggu</span>
           <a href="{{ url('/pendaftaran') }}" class="font-medium hover:opacity-80 transition-opacity flex items-center gap-1" style="color: #f84e01;">
-            Daftar Sekarang 
+            Daftar Sekarang
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -318,7 +318,7 @@
           </div>
           <h3 class="font-bold text-xl" style="color: #0d7e84;">Tokutei Ginou (Mandiri)</h3>
         </div>
-        
+
         <p class="text-gray-600 leading-relaxed mb-6">
           Program kerja ke Jepang yang membutuhkan sertifikat keterampilan khusus bidang kerja. Untuk profesional yang ingin meningkatkan karir dengan keahlian spesifik yang tersertifikasi.
         </p>
@@ -347,7 +347,7 @@
         <div class="flex items-center justify-between pt-4 border-t" style="border-top-color: #0d7e84;">
           <span class="px-3 py-1.5 rounded-lg font-medium text-sm" style="background-color: #0d7e84; color: white;">16-20 Minggu</span>
           <a href="{{ url('/pendaftaran') }}" class="font-medium hover:opacity-80 transition-opacity flex items-center gap-1" style="color: #0d7e84;">
-            Daftar Sekarang 
+            Daftar Sekarang
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -360,7 +360,7 @@
     <div class="mt-10 text-center">
       <p class="text-sm text-gray-500 mb-4">Kedua program dilengkapi dengan pelatihan bahasa Jepang dan budaya kerja Jepang</p>
       <a href="{{ url('/profile') }}" class="inline-flex items-center gap-2 text-sm font-medium hover:opacity-80 transition-opacity" style="color: #0d7e84;">
-        Lihat Detail Kurikulum 
+        Lihat Detail Kurikulum
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
@@ -400,119 +400,216 @@
       </div>
     </div>
 
-    {{-- Testimonials --}}
-    <div class="grid md:grid-cols-3 gap-8 mb-12">
-      {{-- Testimonial 1 --}}
-      <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold" style="background: linear-gradient(135deg, #f84e01 0%, #eaac59 100%);">
-            BM
+    {{-- Testimonials (dinamis) --}}
+    {{-- Testimonials (carousel responsif: desktop 3, tablet 2, mobile 1) --}}
+    <div class="relative mb-12">
+      {{-- arrows --}}
+      <button id="alumni-prev" aria-label="Previous" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white shadow-md hover:shadow-lg disabled:opacity-40">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="alumni-next" aria-label="Next" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white shadow-md hover:shadow-lg disabled:opacity-40">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {{-- viewport --}}
+      <div id="alumni-viewport" class="overflow-hidden">
+        {{-- track: inline-flex of cards --}}
+        <div id="alumni-track" class="flex gap-8 transition-transform duration-300 will-change-transform">
+          @foreach($alumni as $al)
+          <div class="alumni-card flex-shrink-0 w-full md:w-1/3 lg:w-1/3">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow h-full flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  @php
+                  $parts = preg_split('/\s+/', trim($al->nama));
+                  $initials = strtoupper(substr($parts[0] ?? '', 0, 1) . (isset($parts[1]) ? substr($parts[1],0,1) : ''));
+                  @endphp
+
+                  @if(!empty($al->foto_path))
+                  <img src="{{ asset('storage/' . $al->foto_path) }}" alt="{{ $al->nama }}" class="w-16 h-16 rounded-full object-cover" />
+                  @else
+                  <div class="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold" style="background: linear-gradient(135deg, #f84e01 0%, #eaac59 100%);">
+                    {{ $initials }}
+                  </div>
+                  @endif
+
+                  <div>
+                    <h4 class="font-bold text-gray-900">{{ $al->nama }}</h4>
+                    <p class="text-sm text-gray-600">
+                      {{ $al->program_label ?? $al->program }}
+                      @if($al->tahun_lulus) • Angkatan {{ $al->tahun_lulus }} @endif
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-1 mb-3">
+                  @for($i=0;$i<5;$i++)
+                    <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    @endfor
+                </div>
+
+                <p class="text-gray-600 leading-relaxed italic">
+                  {{ $al->getTranslated('pesan') ?? ($al->pesan ?: '—') }}
+                </p>
+              </div>
+
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <span class="text-xs font-medium px-2 py-1 rounded {{ $al->program === 'GINOU JISSHUUSEI' ? 'bg-amber-500 text-white' : 'bg-teal-600 text-white' }}">
+                  {{ $al->program_label }}
+                </span>
+
+                @if($al->tahun_lulus)
+                <span class="text-xs text-gray-500 ml-2">Angkatan {{ $al->tahun_lulus }}</span>
+                @endif
+              </div>
+            </div>
           </div>
-          <div>
-            <h4 class="font-bold text-gray-900">Budi Santoso</h4>
-            <p class="text-sm text-gray-600">Manufacturing • Toyota</p>
-          </div>
-        </div>
-        <div class="flex gap-1 mb-3">
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-        </div>
-        <p class="text-gray-600 leading-relaxed italic">
-          "Pelatihan di LPK MORI sangat membantu. Sensei-sensei sangat sabar mengajar bahasa Jepang dan budaya kerja. Sekarang saya bekerja di Toyota dengan gaji yang memuaskan."
-        </p>
-        <div class="mt-4 pt-4 border-t border-gray-100">
-          <span class="text-xs font-medium px-2 py-1 rounded" style="background-color: #f84e01; color: white;">Ginou Jisshuu</span>
-          <span class="text-xs text-gray-500 ml-2">Angkatan 2020</span>
+          @endforeach
         </div>
       </div>
 
-      {{-- Testimonial 2 --}}
-      <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold" style="background: linear-gradient(135deg, #0d7e84 0%, #43ca88 100%);">
-            SA
-          </div>
-          <div>
-            <h4 class="font-bold text-gray-900">Siti Aminah</h4>
-            <p class="text-sm text-gray-600">Care Worker • Osaka</p>
-          </div>
-        </div>
-        <div class="flex gap-1 mb-3">
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-        </div>
-        <p class="text-gray-600 leading-relaxed italic">
-          "Alhamdulillah, berkat LPK MORI saya bisa kerja di bidang caregiving di Osaka. Fasilitasnya lengkap dan pelatihannya profesional. Sangat recommended!"
-        </p>
-        <div class="mt-4 pt-4 border-t border-gray-100">
-          <span class="text-xs font-medium px-2 py-1 rounded" style="background-color: #0d7e84; color: white;">Tokutei Ginou</span>
-          <span class="text-xs text-gray-500 ml-2">Angkatan 2021</span>
-        </div>
-      </div>
-
-      {{-- Testimonial 3 --}}
-      <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold" style="background: linear-gradient(135deg, #eaac59 0%, #43ca88 100%);">
-            RP
-          </div>
-          <div>
-            <h4 class="font-bold text-gray-900">Rizki Pratama</h4>
-            <p class="text-sm text-gray-600">Construction • Kyoto</p>
-          </div>
-        </div>
-        <div class="flex gap-1 mb-3">
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <svg class="w-5 h-5" style="color: #eaac59;" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-        </div>
-        <p class="text-gray-600 leading-relaxed italic">
-          "Dari awal pendaftaran sampai penempatan kerja, LPK MORI selalu membimbing dengan baik. Sekarang saya sudah 3 tahun bekerja di Kyoto dan sangat puas dengan hasilnya."
-        </p>
-        <div class="mt-4 pt-4 border-t border-gray-100">
-          <span class="text-xs font-medium px-2 py-1 rounded" style="background-color: #43ca88; color: white;">Ginou Jisshuu</span>
-          <span class="text-xs text-gray-500 ml-2">Angkatan 2019</span>
-        </div>
-      </div>
+      {{-- dots (optional) --}}
+      <div id="alumni-dots" class="flex items-center justify-center gap-2 mt-6"></div>
     </div>
+
+    @push('scripts')
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('alumni-track');
+        const prev = document.getElementById('alumni-prev');
+        const next = document.getElementById('alumni-next');
+        const dotsWrap = document.getElementById('alumni-dots');
+        const viewport = document.getElementById('alumni-viewport');
+
+        // get total items from DOM
+        const cards = Array.from(track.children);
+        const total = cards.length;
+
+        // responsive visible count function
+        function getVisibleCount() {
+          const w = window.innerWidth;
+          if (w >= 1024) return 3; // lg and up -> 3
+          if (w >= 768) return 3; // md -> 3 (keinginan Anda)
+          if (w >= 640) return 2; // sm -> 2
+          return 1; // xs -> 1
+        }
+
+        // compute slide width (in pixels) per card based on viewport
+        function setCardWidths() {
+          const visible = getVisibleCount();
+          // ensure track children width equals viewport width / visible
+          const vpWidth = viewport.clientWidth;
+          const cardWidth = vpWidth / visible;
+          cards.forEach(c => c.style.width = `${cardWidth}px`);
+          // after resizing, ensure position still correct
+          goToIndex(currentIndex, /*animate=*/ false);
+        }
+
+        // pages = number of steps (shift by visible count)
+        function getPageCount() {
+          const visible = getVisibleCount();
+          return Math.max(1, Math.ceil(total / visible));
+        }
+
+        // current page index (0..pages-1)
+        let currentPage = 0;
+        let currentIndex = 0; // used to compute translate
+
+        function updateButtons() {
+          const pages = getPageCount();
+          prev.disabled = (currentPage === 0);
+          next.disabled = (currentPage >= pages - 1);
+        }
+
+        function buildDots() {
+          dotsWrap.innerHTML = '';
+          const pages = getPageCount();
+          for (let i = 0; i < pages; i++) {
+            const d = document.createElement('button');
+            d.className = 'w-2 h-2 rounded-full ' + (i === currentPage ? 'bg-gray-800' : 'bg-gray-300');
+            d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            d.addEventListener('click', () => {
+              currentPage = i;
+              goToPage(currentPage);
+            });
+            dotsWrap.appendChild(d);
+          }
+        }
+
+        function goToIndex(index, animate = true) {
+          // index = starting card index to show at leftmost
+          const visible = getVisibleCount();
+          // clamp index
+          index = Math.max(0, Math.min(index, Math.max(0, total - visible)));
+          currentIndex = index;
+          const offset = index * (cards[0].clientWidth || 0);
+          track.style.transitionDuration = animate ? '300ms' : '0ms';
+          track.style.transform = `translateX(-${offset}px)`;
+          // update page
+          currentPage = Math.floor(index / visible);
+          updateButtons();
+          refreshDots();
+        }
+
+        function goToPage(page) {
+          const visible = getVisibleCount();
+          const index = page * visible;
+          goToIndex(index);
+        }
+
+        function refreshDots() {
+          const dots = Array.from(dotsWrap.children);
+          dots.forEach((d, idx) => d.className = 'w-2 h-2 rounded-full ' + (idx === currentPage ? 'bg-gray-800' : 'bg-gray-300'));
+        }
+
+        // navigation handlers: shift by visible count
+        prev.addEventListener('click', () => {
+          const visible = getVisibleCount();
+          goToIndex(currentIndex - visible);
+        });
+        next.addEventListener('click', () => {
+          const visible = getVisibleCount();
+          goToIndex(currentIndex + visible);
+        });
+
+        // keyboard support
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') prev.click();
+          if (e.key === 'ArrowRight') next.click();
+        });
+
+        // resize handling
+        window.addEventListener('resize', () => {
+          setCardWidths();
+          buildDots();
+          updateButtons();
+        });
+
+        // init
+        setCardWidths();
+        buildDots();
+        updateButtons();
+
+        // if total <= visible, disable buttons
+        function checkDisableIfNotNeeded() {
+          const visible = getVisibleCount();
+          if (total <= visible) {
+            prev.disabled = true;
+            next.disabled = true;
+            dotsWrap.innerHTML = '';
+          }
+        }
+        checkDisableIfNotNeeded();
+      });
+    </script>
+    @endpush
+
 
     {{-- CTA Alumni --}}
     <div class="text-center rounded-2xl p-10" style="background: linear-gradient(135deg, #f84e01 0%, #0d7e84 50%, #43ca88 100%);">
@@ -521,10 +618,10 @@
         Wujudkan impian karir Anda di Jepang bersama LPK MORI. Dapatkan pelatihan terbaik dan kesempatan bekerja di perusahaan-perusahaan ternama.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="{{ url('/pendaftaran') }}" class="px-6 py-3 rounded-lg bg-white font-medium hover:scale-105 transition-transform" style="color: #f84e01;">
+        <a href="{{ route('pendaftaran.index') }}" class="px-6 py-3 rounded-lg bg-white font-medium hover:scale-105 transition-transform" style="color: #f84e01;">
           Daftar Sekarang
         </a>
-        <a href="{{ url('/about') }}" class="px-6 py-3 rounded-lg border-2 border-white text-white font-medium hover:bg-white/10 transition-all">
+        <a href="{{ route('alumni') }}" class="px-6 py-3 rounded-lg border-2 border-white text-white font-medium hover:bg-white/10 transition-all">
           Lihat Lebih Banyak Alumni
         </a>
       </div>
@@ -532,8 +629,9 @@
   </div>
 </section>
 
+
 {{-- CTA STRIP --}}
-<section class="py-10">
+<!-- <section class="py-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="rounded-2xl px-6 py-8 md:px-10 md:py-10 text-white flex flex-col md:flex-row items-center justify-between gap-4" style="background: linear-gradient(135deg, #f84e01 0%, #eaac59 100%);">
       <div>
@@ -548,7 +646,7 @@
       </a>
     </div>
   </div>
-</section>
+</section> -->
 
 
 @endsection

@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\FasilitasController;
 use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\AlumniController;
+use App\Http\Controllers\GaleriController as PublicGaleriController;
+use App\Http\Controllers\AlumniPublicController;
+
+
 // ==================================================================
 // 1. HALAMAN PUBLIK (tanpa auth)
 // ==================================================================
@@ -28,6 +32,12 @@ Route::middleware(['set.locale'])->group(function () {
         return redirect()->back();
     })->name('lang.switch');
 });
+
+// PUBLIC: Galeri halaman publik (pakai controller publik)
+Route::get('/galeri', [PublicGaleriController::class, 'index'])->name('galeri.index');
+// Route::get('/galeri/{galeri}', [PublicGaleriController::class, 'show'])->name('galeri.show');
+Route::get('/', [AlumniPublicController::class, 'home'])->name('home');
+Route::get('/alumni', [AlumniPublicController::class, 'index'])->name('alumni');
 
 // ==================================================================
 // 2. DASHBOARD OTOMATIS BERDASARKAN ROLE

@@ -69,7 +69,7 @@ if (!function_exists('translateText')) {
                 'en' => 'Registration Data',
                 'ja' => '登録データ'
             ],
-                        // === PROGRAM ===
+            // === PROGRAM ===
             'GINOU JISSHUUSEI' => [
                 'id' => 'GINOU JISSHUUSEI',
                 'en' => 'Technical Intern Training',
@@ -199,8 +199,266 @@ if (!function_exists('translateText')) {
             'Program' => ['id' => 'Program', 'en' => 'Program', 'ja' => 'プログラム'],
             'Ganti Foto' => ['id' => 'Ganti Foto', 'en' => 'Change Photo', 'ja' => '写真を変更'],
             'Kosongkan jika tidak ingin ganti' => ['id' => 'Kosongkan jika tidak ingin ganti', 'en' => 'Leave empty if not changing', 'ja' => '変更しない場合は空にしてください'],
-            'Simpan Perubahan' => ['id' => 'Simpan Perubahan', 'en' => 'Save Changes', 'ja' => '変更を保存'],
-            ];
+            // 'Simpan Perubahan' => ['id' => 'Simpan Perubahan', 'en' => 'Save Changes', 'ja' => '変更を保存'],
+            // === HOMEPAGE (LPK MORI) ===
+            'Ayo Kerja ke Jepang. Berkarya untuk Negeri.' => [
+                'id' => 'Ayo Kerja ke Jepang. Berkarya untuk Negeri.',
+                'en' => 'Let’s Work in Japan. Contribute to the Nation.',
+                'ja' => '日本で働こう。国のために貢献しよう。'
+            ],
+            'Berkarya untuk Negeri.' => [
+                'id' => 'Berkarya untuk Negeri.',
+                'en' => 'Contribute to the Nation.',
+                'ja' => '国のために貢献する'
+            ],
+            'Program N5–N3, Kaigo & persiapan SSW/TITP dengan sensei berpengalaman.' => [
+                'id' => 'Program N5–N3, Kaigo & persiapan SSW/TITP dengan sensei berpengalaman.',
+                'en' => 'N5–N3 Programs, Caregiving & SSW/TITP Preparation with Experienced Instructors.',
+                'ja' => 'N5～N3プログラム、介護＆SSW/TITP準備を経験豊富な先生と'
+            ],
+            'Tonton Profil' => [
+                'id' => 'Tonton Profil',
+                'en' => 'Watch Profile',
+                'ja' => 'プロフィールを見る'
+            ],
+            'Preview LPK MORI' => [
+                'id' => 'Preview LPK MORI',
+                'en' => 'LPK MORI Preview',
+                'ja' => 'LPK MORI プレビュー'
+            ],
+            'Profil Perusahaan' => [
+                'id' => 'Profil Perusahaan',
+                'en' => 'Company Profile',
+                'ja' => '会社概要'
+            ],
+            'Lembaga Pelatihan Keterampilan (LPK) Minori Medan' => [
+                'id' => 'Lembaga Pelatihan Keterampilan (LPK) Minori Medan',
+                'en' => 'Minori Medan Skills Training Institute (LPK)',
+                'ja' => '技能訓練機関（LPK）ミノリ・メダン'
+            ],
+            'Identitas Resmi' => [
+                'id' => 'Identitas Resmi',
+                'en' => 'Official Identity',
+                'ja' => '公式身分'
+            ],
+            'Nama Perusahaan' => [
+                'id' => 'Nama Perusahaan',
+                'en' => 'Company Name',
+                'ja' => '会社名'
+            ],
+            'Direktur' => [
+                'id' => 'Direktur',
+                'en' => 'Director',
+                'ja' => '取締役'
+            ],
+            'Tanggal Pendirian' => [
+                'id' => 'Tanggal Pendirian',
+                'en' => 'Establishment Date',
+                'ja' => '設立日'
+            ],
+            'NPWP' => [
+                'id' => 'NPWP',
+                'en' => 'Tax ID',
+                'ja' => '納税者番号'
+            ],
+            'Akta & Legalitas' => [
+                'id' => 'Akta & Legalitas',
+                'en' => 'Deed & Legality',
+                'ja' => '公証証書と合法性'
+            ],
+            'Notaris Pendirian' => [
+                'id' => 'Notaris Pendirian',
+                'en' => 'Establishment Notary',
+                'ja' => '設立公証人'
+            ],
+            'Akta Perubahan 2023' => [
+                'id' => 'Akta Perubahan 2023',
+                'en' => '2023 Amendment Deed',
+                'ja' => '2023年変更公証証書'
+            ],
+            'SK Kemenkumham' => [
+                'id' => 'SK Kemenkumham',
+                'en' => 'Ministry of Law Decree',
+                'ja' => '法務省決定書'
+            ],
+            'OSS Sertifikat Standar' => [
+                'id' => 'OSS Sertifikat Standar',
+                'en' => 'OSS Standard Certificate',
+                'ja' => 'OSS標準証明書'
+            ],
+            'Izin Operasional' => [
+                'id' => 'Izin Operasional',
+                'en' => 'Operational Permit',
+                'ja' => '運営許可'
+            ],
+            'Dinsos & Tenaga Kerja Medan' => [
+                'id' => 'Dinsos & Tenaga Kerja Medan',
+                'en' => 'Medan Social & Manpower Office',
+                'ja' => 'メダン社会・労働局'
+            ],
+            'Disnaker Medan' => [
+                'id' => 'Disnaker Medan',
+                'en' => 'Medan Manpower Office',
+                'ja' => 'メダン労働局'
+            ],
+            'Akreditasi LA-LPK' => [
+                'id' => 'Akreditasi LA-LPK',
+                'en' => 'LA-LPK Accreditation',
+                'ja' => 'LA-LPK認定'
+            ],
+            'Izin SO Kemnaker RI' => [
+                'id' => 'Izin SO Kemnaker RI',
+                'en' => 'Ministry of Manpower SO Permit',
+                'ja' => '労働省SO許可'
+            ],
+            'Alamat & Kontak' => [
+                'id' => 'Alamat & Kontak',
+                'en' => 'Address & Contact',
+                'ja' => '住所と連絡先'
+            ],
+            'WhatsApp Official' => [
+                'id' => 'WhatsApp Official',
+                'en' => 'Official WhatsApp',
+                'ja' => '公式WhatsApp'
+            ],
+            'Program Kerja ke Jepang' => [
+                'id' => 'Program Kerja ke Jepang',
+                'en' => 'Work Programs to Japan',
+                'ja' => '日本就労プログラム'
+            ],
+            'Dua jalur program resmi LPK MORI untuk karir Anda di Jepang' => [
+                'id' => 'Dua jalur program resmi LPK MORI untuk karir Anda di Jepang',
+                'en' => 'Two official LPK MORI pathways for your career in Japan',
+                'ja' => '日本でのキャリアのためのLPK MORI公式2ルート'
+            ],
+            'Ginou Jisshuu (Magang)' => [
+                'id' => 'Ginou Jisshuu (Magang)',
+                'en' => 'Technical Intern Training (Internship)',
+                'ja' => '技能実習（インターン）'
+            ],
+            'Program kerja ke Jepang tanpa memerlukan sertifikat keahlian bidang kerja. Cocok untuk fresh graduate atau yang ingin memulai karir di Jepang dengan bimbingan intensif.' => [
+                'id' => 'Program kerja ke Jepang tanpa memerlukan sertifikat keahlian bidang kerja. Cocok untuk fresh graduate atau yang ingin memulai karir di Jepang dengan bimbingan intensif.',
+                'en' => 'Japan work program without requiring specific skill certification. Ideal for fresh graduates or those starting a career in Japan with intensive guidance.',
+                'ja' => '特定のスキル証明書不要の日本就労プログラム。新卒者や集中指導付きで日本キャリアを始めたい人に最適。'
+            ],
+            'Tanpa sertifikat keahlian khusus' => [
+                'id' => 'Tanpa sertifikat keahlian khusus',
+                'en' => 'No specific skill certification required',
+                'ja' => '特定のスキル証明書不要'
+            ],
+            'Pelatihan bahasa Jepang N5-N3' => [
+                'id' => 'Pelatihan bahasa Jepang N5-N3',
+                'en' => 'Japanese Language Training N5-N3',
+                'ja' => '日本語トレーニング N5-N3'
+            ],
+            'Program TITP resmi pemerintah' => [
+                'id' => 'Program TITP resmi pemerintah',
+                'en' => 'Official Government TITP Program',
+                'ja' => '政府公式TITPプログラム'
+            ],
+            '12-16 Minggu' => [
+                'id' => '12-16 Minggu',
+                'en' => '12-16 Weeks',
+                'ja' => '12～16週間'
+            ],
+            'Tokutei Ginou (Mandiri)' => [
+                'id' => 'Tokutei Ginou (Mandiri)',
+                'en' => 'Specified Skilled Worker (Independent)',
+                'ja' => '特定技能（独立）'
+            ],
+            'Program kerja ke Jepang yang membutuhkan sertifikat keterampilan khusus bidang kerja. Untuk profesional yang ingin meningkatkan karir dengan keahlian spesifik yang tersertifikasi.' => [
+                'id' => 'Program kerja ke Jepang yang membutuhkan sertifikat keterampilan khusus bidang kerja. Untuk profesional yang ingin meningkatkan karir dengan keahlian spesifik yang tersertifikasi.',
+                'en' => 'Japan work program requiring specific skill certification. For professionals advancing careers with certified expertise.',
+                'ja' => '特定のスキル証明書が必要な日本就労プログラム。認定された専門知識でキャリアを向上させたいプロフェッショナル向け。'
+            ],
+            'Memerlukan sertifikat keterampilan' => [
+                'id' => 'Memerlukan sertifikat keterampilan',
+                'en' => 'Requires skill certification',
+                'ja' => 'スキル証明書が必要'
+            ],
+            'Program SSW (Specified Skilled Worker)' => [
+                'id' => 'Program SSW (Specified Skilled Worker)',
+                'en' => 'SSW Program (Specified Skilled Worker)',
+                'ja' => 'SSWプログラム（特定技能労働者）'
+            ],
+            'Bidang kerja spesifik tersertifikasi' => [
+                'id' => 'Bidang kerja spesifik tersertifikasi',
+                'en' => 'Certified specific work field',
+                'ja' => '認定された特定職種'
+            ],
+            '16-20 Minggu' => [
+                'id' => '16-20 Minggu',
+                'en' => '16-20 Weeks',
+                'ja' => '16～20週間'
+            ],
+            'Kedua program dilengkapi dengan pelatihan bahasa Jepang dan budaya kerja Jepang' => [
+                'id' => 'Kedua program dilengkapi dengan pelatihan bahasa Jepang dan budaya kerja Jepang',
+                'en' => 'Both programs include Japanese language and work culture training',
+                'ja' => '両プログラムに日本語と日本職場文化のトレーニングを含む'
+            ],
+            'Lihat Detail Kurikulum' => [
+                'id' => 'Lihat Detail Kurikulum',
+                'en' => 'View Curriculum Details',
+                'ja' => 'カリキュラムの詳細を見る'
+            ],
+            'Alumni Sukses Kami' => [
+                'id' => 'Alumni Sukses Kami',
+                'en' => 'Our Successful Alumni',
+                'ja' => '私たちの成功した卒業生'
+            ],
+            'Ribuan alumni LPK MORI telah berkarir sukses di berbagai perusahaan ternama di Jepang' => [
+                'id' => 'Ribuan alumni LPK MORI telah berkarir sukses di berbagai perusahaan ternama di Jepang',
+                'en' => 'Thousands of LPK MORI alumni have successful careers in renowned Japanese companies',
+                'ja' => '数千人のLPK MORI卒業生が日本有名企業で成功したキャリアを築いています'
+            ],
+            'Alumni Bekerja' => [
+                'id' => 'Alumni Bekerja',
+                'en' => 'Working Alumni',
+                'ja' => '就労卒業生'
+            ],
+            'Tingkat Kelulusan' => [
+                'id' => 'Tingkat Kelulusan',
+                'en' => 'Graduation Rate',
+                'ja' => '卒業率'
+            ],
+            'Perusahaan Partner' => [
+                'id' => 'Perusahaan Partner',
+                'en' => 'Partner Companies',
+                'ja' => 'パートナー企業'
+            ],
+            'Pengalaman' => [
+                'id' => 'Pengalaman',
+                'en' => 'Experience',
+                'ja' => '経験'
+            ],
+            'Belum ada testimonial alumni.' => [
+                'id' => 'Belum ada testimonial alumni.',
+                'en' => 'No alumni testimonials yet.',
+                'ja' => 'まだ卒業生の証言はありません。'
+            ],
+            'Angkatan' => [
+                'id' => 'Angkatan',
+                'en' => 'Batch',
+                'ja' => '期'
+            ],
+            'Ingin Bergabung dengan Alumni Sukses Kami?' => [
+                'id' => 'Ingin Bergabung dengan Alumni Sukses Kami?',
+                'en' => 'Want to Join Our Successful Alumni?',
+                'ja' => '私たちの成功した卒業生に加わりたいですか？'
+            ],
+            'Wujudkan impian karir Anda di Jepang bersama LPK MORI. Dapatkan pelatihan terbaik dan kesempatan bekerja di perusahaan-perusahaan ternama.' => [
+                'id' => 'Wujudkan impian karir Anda di Jepang bersama LPK MORI. Dapatkan pelatihan terbaik dan kesempatan bekerja di perusahaan-perusahaan ternama.',
+                'en' => 'Realize your career dreams in Japan with LPK MORI. Get the best training and opportunities to work at top companies.',
+                'ja' => 'LPK MORIと一緒に日本でのキャリアの夢を実現しましょう。最高のトレーニングと一流企業での就労機会を得られます。'
+            ],
+            'Lihat Lebih Banyak Alumni' => [
+                'id' => 'Lihat Lebih Banyak Alumni',
+                'en' => 'See More Alumni',
+                'ja' => 'さらに卒業生を見る'
+            ],
+        ];
+
+
 
 
         // Pastikan $text ada di kamus
