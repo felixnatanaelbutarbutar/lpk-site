@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\PendaftaranSiswaController;
 use App\Http\Controllers\Admin\PendaftaranAdminController;
 use App\Http\Controllers\Admin\AdminController;
@@ -55,9 +55,9 @@ Route::middleware(['auth', 'set.locale'])->group(function () {
     })->name('dashboard');
 
     // Profil
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 // ==================================================================
@@ -130,6 +130,12 @@ Route::middleware(['auth', 'admin', 'set.locale'])
         Route::put('alumni/{alumni}', [AlumniController::class, 'update'])->name('alumni.update');
         Route::delete('alumni/{alumni}', [AlumniController::class, 'destroy'])->name('alumni.destroy');
          // Route::resource('users', Admin\UserController::class)->only(['index', 'update']);
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
+        Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
+        Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile/logo', [ProfileController::class, 'removeLogo'])->name('profile.remove-logo');
          // Route::view('settings', 'admin.settings.index')->name('settings.index');
      });
 

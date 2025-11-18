@@ -456,6 +456,120 @@ if (!function_exists('translateText')) {
                 'en' => 'See More Alumni',
                 'ja' => 'さらに卒業生を見る'
             ],
+            // === ADMIN / PROFIL LKP ===
+            'Manajemen Profil LKP' => [
+                'id' => 'Manajemen Profil LKP',
+                'en' => 'Institution Profile Management',
+                'ja' => '機関プロフィール管理'
+            ],
+
+            'Profil Lembaga' => [
+                'id' => 'Profil Lembaga',
+                'en' => 'Institution Profile',
+                'ja' => '機関プロフィール'
+            ],
+
+            'Edit Profil' => [
+                'id' => 'Edit Profil',
+                'en' => 'Edit Profile',
+                'ja' => 'プロフィールを編集'
+            ],
+
+            'Informasi Umum' => [
+                'id' => 'Informasi Umum',
+                'en' => 'General Information',
+                'ja' => '基本情報'
+            ],
+
+            'Direktur' => [
+                'id' => 'Direktur',
+                'en' => 'Director',
+                'ja' => '代表者'
+            ],
+
+            'Website' => [
+                'id' => 'Website',
+                'en' => 'Website',
+                'ja' => 'ウェブサイト'
+            ],
+
+            'NPWP' => [
+                'id' => 'NPWP',
+                'en' => 'Tax ID (NPWP)',
+                'ja' => '納税者番号（NPWP）'
+            ],
+
+            'Tanggal Pendirian' => [
+                'id' => 'Tanggal Pendirian',
+                'en' => 'Establishment Date',
+                'ja' => '設立日'
+            ],
+
+            'Perizinan & Akreditasi' => [
+                'id' => 'Perizinan & Akreditasi',
+                'en' => 'Licensing & Accreditation',
+                'ja' => '許可・認定'
+            ],
+
+            'SK Pendirian' => [
+                'id' => 'SK Pendirian',
+                'en' => 'Establishment Decree',
+                'ja' => '設立許可証'
+            ],
+
+            'NIB / OSS' => [
+                'id' => 'NIB / OSS',
+                'en' => 'Business Identification Number (NIB)',
+                'ja' => '事業者登録番号（NIB）'
+            ],
+
+            'Registrasi Kemnaker' => [
+                'id' => 'Registrasi Kemnaker',
+                'en' => 'Ministry of Manpower Registration',
+                'ja' => '労働省登録番号'
+            ],
+
+            'Akreditasi' => [
+                'id' => 'Akreditasi',
+                'en' => 'Accreditation',
+                'ja' => '認定'
+            ],
+
+            'Belum' => [
+                'id' => 'Belum',
+                'en' => 'Not Yet',
+                'ja' => '未取得'
+            ],
+
+            'Visi' => [
+                'id' => 'Visi',
+                'en' => 'Vision',
+                'ja' => 'ビジョン'
+            ],
+
+            'Misi' => [
+                'id' => 'Misi',
+                'en' => 'Mission',
+                'ja' => 'ミッション'
+            ],
+
+            'Sejarah Singkat' => [
+                'id' => 'Sejarah Singkat',
+                'en' => 'Brief History',
+                'ja' => '沿革'
+            ],
+
+            'Alamat belum diisi' => [
+                'id' => 'Alamat belum diisi',
+                'en' => 'Address not filled yet',
+                'ja' => '住所が未入力です'
+            ],
+
+            'Belum diisi' => [
+                'id' => 'Belum diisi',
+                'en' => 'Not filled yet',
+                'ja' => '未入力'
+            ],
         ];
 
 

@@ -98,7 +98,14 @@
         </svg>
         <span class="font-medium">Alumni</span>
       </a>
-
+      {{-- Settings --}}
+      <a href="{{ route('admin.profile.index') }}"   
+         class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors {{ request()->routeIs('admin.profile.*') ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
+        <svg class="w-5 h-5" style="color: #f84e01;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        <span class="font-medium">Profile</span>
+      </a>
       <div class="my-4 border-t border-gray-200 dark:border-zinc-700"></div>
 
       {{-- Settings --}}
@@ -185,11 +192,11 @@
                 <div class="font-semibold">{{ auth()->user()->name }}</div>
                 <div class="text-xs text-gray-500">{{ auth()->user()->email }}</div>
               </div>
-              <a href="{{ route('profile.edit') }}" class="flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-zinc-700">
+              {{-- <a href="{{ route('profile.edit') }}" class="flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-zinc-700">
                 <svg class="w-4 h-4" style="color: #0d7e84;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                Profile Settings
+                Profile Settings --}}
               </a>
               <a href="{{ url('/') }}" class="flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-zinc-700">
                 <svg class="w-4 h-4" style="color: #43ca88;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
