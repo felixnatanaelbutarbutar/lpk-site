@@ -19,7 +19,8 @@
     @endif
 
     <form action="{{ route('admin.alumni.update', $alumni) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
-        @csrf @method('PATCH')
+        @csrf
+        @method('PUT') {{-- FIX: sebelumnya PATCH --}}
 
         <!-- Foto Saat Ini -->
         @if($alumni->foto_path)

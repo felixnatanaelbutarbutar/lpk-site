@@ -11,7 +11,8 @@ use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\AlumniController;
 use App\Http\Controllers\GaleriController as PublicGaleriController;
 use App\Http\Controllers\AlumniPublicController;
-
+use App\Http\Controllers\ProfileController as ProfilePublicController;
+use App\Http\Controllers\FasilitasController as FasilitasPublicController;
 
 // ==================================================================
 // 1. HALAMAN PUBLIK (tanpa auth)
@@ -38,6 +39,11 @@ Route::get('/galeri', [PublicGaleriController::class, 'index'])->name('galeri.in
 // Route::get('/galeri/{galeri}', [PublicGaleriController::class, 'show'])->name('galeri.show');
 Route::get('/', [AlumniPublicController::class, 'home'])->name('home');
 Route::get('/alumni', [AlumniPublicController::class, 'index'])->name('alumni');
+// Ganti yang lama jadi ini (tambah ->name() dan as)
+Route::get('/fasilitas', [FasilitasPublicController::class, 'index'])->name('fasilitas');
+
+
+Route::get('/profile', [ProfilePublicController::class, 'index'])->name('profile');
 
 // ==================================================================
 // 2. DASHBOARD OTOMATIS BERDASARKAN ROLE

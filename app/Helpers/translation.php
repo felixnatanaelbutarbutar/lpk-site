@@ -570,6 +570,63 @@ if (!function_exists('translateText')) {
                 'en' => 'Not filled yet',
                 'ja' => '未入力'
             ],
+            'Menunggu' => [
+                'id' => 'Menunggu',
+                'en' => 'Pending',
+                'ja' => '保留中', // Horyū-chū
+                ],
+    
+                'Diterima' => [
+                    'id' => 'Diterima',
+                    'en' => 'Accepted',
+                    'ja' => '承認済み', // Shōnin-zumi (Approved/Accepted)
+                ],
+    
+                'Ditolak' => [
+                    'id' => 'Ditolak',
+                    'en' => 'Rejected',
+                    'ja' => '拒否されました', // Kyohi saremashita
+                ],
+                'Belum ada pendaftaran.' => [
+                    'id' => 'Belum ada pendaftaran.',
+                    'en' => 'No registrations yet.',
+                    'ja' => 'まだ登録がありません。',
+                ],
+                'Pendaftaran Online' => [
+                    'id' => 'Pendaftaran Online',
+                    'en' => 'Online Registration',
+                    'ja' => 'オンライン登録', // onrain tōroku
+                ],
+                'Tentang Kami' => [
+                    'id' => 'Takdir Kami',
+                    'en' => 'About Us',
+                    'ja' => '私たちについて',
+                ],
+                
+                'Fasilitas' => [
+                    'id' => 'Fasilitas',
+                    'en' => 'Facilities',
+                    'ja' => '施設',
+                ],
+                
+                'Galeri' => [
+                    'id' => 'Galeri',
+                    'en' => 'Gallery',
+                    'ja' => 'ギャラリー',
+                ],
+                
+                'Hubungi Kami' => [
+                    'id' => 'Hubungi Kami',
+                    'en' => 'Contact Us',
+                    'ja' => 'お問い合わせ',
+                ],
+                
+                'Login' => [
+                    'id' => 'Masuk',
+                    'en' => 'Login',
+                    'ja' => 'ログイン',
+                ],
+                
         ];
 
 
